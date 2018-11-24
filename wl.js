@@ -42,7 +42,7 @@ client.on('guildMemberAdd', msg => {
     var embed = new Discord.RichEmbed()
     .setAuthor(msg.user.username, msg.user.avatarURL)
     .setThumbnail(msg.user.avatarURL)
-    .setImage('حط رابط الصورة هني')     
+    .setImage('https://www.google.com.kw/search?biw=1821&bih=876&tbm=isch&sa=1&ei=3P_4W8_PFsOdgAbnmImACw&q=Welcome&oq=Welcome&gs_l=img.3..0i67l2j0l5j0i67j0j0i67.27172.28014..28050...0.0..0.195.195.0j1......1....1..gws-wiz-img.1SdYKhMkc-s#imgrc=Mj2oe2irQFezuM:')     
     .setTitle('عضو جديد!')
     .setDescription('مرحبا بك بالسيرفر')
     .addField('``ايدي العضو``:',"" +  msg.user.id, true)
