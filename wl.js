@@ -39,7 +39,7 @@ client.user.setGame(`Welcoming. `,'https://www.twitch.tv/ImD3s_x');
 
 
 client.on("guildMemberAdd", member => {
-      //const welcomer = client.channels.get("512674548382957573");
+      const welcomer = client.channels.get("510419338847584274");
       let welcomer = member.guild.channels.find("name","𝘼𝙂-𝙂𝙚𝙣𝙚𝙧𝙖𝙡")
       if(!welcomer) return;
       if(welcomer) {
