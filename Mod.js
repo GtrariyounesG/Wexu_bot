@@ -610,5 +610,85 @@ member.addRole(Julian[member.user.id].roles.shift());
 
 
 
+client.on("message", message => {
+ if (message.content === "-help-m") {
+  const embed = new Discord.RichEmbed() 
+      .setColor("#ffff00")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+                   👑 『 اوامر ادارية』 👑
+👑-bans 『 يقولك عدد الاشخاص المبندين من السيرفر 』
+👑-ban 『 تبنيد عضو من السيرفر 』
+👑-kick 『 طرد عضو من السيرفر 』
+👑-clear 『 لمسح الشات 』
+👑-mute  『 اعطاء ميوت كتابي 』
+👑-unmute  『 فك الميوت الكتابي 』
+👑-mc  『 تقفيل الشات 』
+👑-umc  『 فتح الشات 』
+👑-hide  『 إخفاء الروم 』
+👑-show  『 إظهار الروم 』
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+`)
+
+
+message.author.sendEmbed(embed)
+
+}
+});
+
+client.on('message', message => {
+     if (message.content === "-help-m") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+/// !hide
+
+client.on('message', message => {
+        if(message.content === prefix + "hide") {
+        if(!message.channel.guild) return;
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms ❌');
+               message.channel.overwritePermissions(message.guild.id, {
+               READ_MESSAGES: false
+   })
+                message.channel.send('Channel Hided Successfully ! ✅  ')
+   }
+  });
+
+/// !show 
+  
+client.on('message', message => {
+        if(message.content === prefix + "show") {
+        if(!message.channel.guild) return;
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('❌');
+               message.channel.overwritePermissions(message.guild.id, {
+               READ_MESSAGES: true
+   })
+                message.channel.send('Channel Showen Successfully ! ✅  ')
+   }
+  });
+  
+  
+  
+  
+client.on('message', message => {
+    if (message.content.startsWith("-bans")) {
+        message.guild.fetchBans()
+        .then(bans => message.channel.send(`${bans.size} عدد اشخاص المبندة من السيرفر `))
+  .catch(console.error);
+}
+});  
+
+
+
 
 client.login(process.env.MOD_TOKEN);
