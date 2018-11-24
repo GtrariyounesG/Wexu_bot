@@ -45,8 +45,8 @@ client.on("message", (message) => {
         if (!message.guild.roles.exists("name", "Server Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
         message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
-            let role = message.guild.roles.find("name", "Server Team");
-            let role2 = message.guild.roles.find("name", "@everyone");
+            let role = message.guild.roles.find("name", "@everyone");
+            let role2 = message.guild.roles.find("name", "Server Team");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
