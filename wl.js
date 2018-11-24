@@ -51,7 +51,7 @@ client.on('guildMemberAdd', msg => {
     .addField(' :bust_in_silhouette:  انت رقم',`**[ ${msg.guild.memberCount} ]**`,true)
     .setColor('GREEN')
     .setFooter(msg.guild.name, msg.guild.iconURL, true)
-    var channel = msg.guild.channels.find('name', 'lobby')        //تقدر تغير اسم الشانل حق الترحيب
+    var channel = msg.guild.channels.find('name', '𝘼𝙂-𝙂𝙚𝙣𝙚𝙧𝙖𝙡')        //تقدر تغير اسم الشانل حق الترحيب
     if (!channel) return;
     channel.send({embed : embed});
     });
