@@ -34,7 +34,7 @@ client.on('ready', () => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-bc`,'https://www.twitch.tv/ImD3s_x');	
+client.user.setGame(`-bc | Brodcast`,'https://www.twitch.tv/ImD3s_x');	
 }); 
 
 
