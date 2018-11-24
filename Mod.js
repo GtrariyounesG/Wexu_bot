@@ -34,7 +34,7 @@ client.on('ready', () => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | Moderation`,'https://www.twitch.tv/ImD3s_x');	
+client.user.setGame(`-help-m | Moderation`,'https://www.twitch.tv/ImD3s_x');	
 });  
 
 client.on ("guildMemberAdd", member => {
