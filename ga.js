@@ -1,3 +1,14 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+var prefix = "!" ; /// البرفكس
+const moment = require('moment');
+
+/// This Version is Unser Maintinance. !
+
+
+
+/// !g 
+
 client.on('message',async message => {
   var time = moment().format('Do MMMM YYYY , hh:mm');
   var room;
@@ -85,3 +96,5 @@ hours = 12;
     });
   }
 });
+
+client.login(process.env.GA_TOKEN);
