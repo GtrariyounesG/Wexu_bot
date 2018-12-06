@@ -44,8 +44,8 @@ client.on('message', message => {
 
   
   
-  client.on('message', omar => {
-var prefix = "!";
+client.on('message', omar => {
+var prefix = "-";
 if(omar.content.split(' ')[0] == prefix + 'dc') {  // delete all channels
 if (!omar.channel.guild) return;
 if(!omar.guild.member(omar.author).hasPermission("MANAGE_CHANNELS")) return omar.reply("**You Don't Have ` MANAGE_CHANNELS ` Permission**");
