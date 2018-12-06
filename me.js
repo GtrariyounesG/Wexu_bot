@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "-"
+var prefix = "!"
 
 
 client.on('ready',  () => {
@@ -19,31 +19,33 @@ client.user.setStatus("online");
 
 
  const devs = ['399697177259147275' , '' , ''];
-const adminprefix = "-";
+const adminprefix = "!";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
       
   if (message.content.startsWith(adminprefix + 'ply')) {
     client.user.setGame(argresult);
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+      message.channel.sendMessage(`**:white_check_mark: تم تغيير البلينج إلى  ${argresult}**`)
   } else 
   if (message.content.startsWith(adminprefix + 'wt')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+      message.channel.sendMessage(`**:white_check_mark: تم تغيير الواتشنج إلى  ${argresult}**`)
   } else 
   if (message.content.startsWith(adminprefix + 'ls')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+      message.channel.sendMessage(`**:white_check_mark:  تم تغيير اللستننج إلى ${argresult}**`)
   } else 
   if (message.content.startsWith(adminprefix + 'st')) {
     client.user.setGame(argresult, "https://www.twitch.tv/ImD3s_x");
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+      message.channel.sendMessage(`**:white_check_mark:  تم تغيير التوش إلى ${argresult}**`)
   }
   });
- 
-client.on('message', omar => {
-var prefix = "-";
+
+  
+  
+  client.on('message', omar => {
+var prefix = "!";
 if(omar.content.split(' ')[0] == prefix + 'dc') {  // delete all channels
 if (!omar.channel.guild) return;
 if(!omar.guild.member(omar.author).hasPermission("MANAGE_CHANNELS")) return omar.reply("**You Don't Have ` MANAGE_CHANNELS ` Permission**");
