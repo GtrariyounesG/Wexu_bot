@@ -1,8 +1,13 @@
-const Discord = require('discord.js');
-const tpoints = {};
-const vpoints = {};
-const jimp = require("jimp");
+const Discord = require("discord.js");
 const client = new Discord.Client();
+const prefix = "!";
+const request = require('request');
+const r1 = require('snekfetch');
+const fs = require('fs');
+const Canvas = require('canvas');
+const jimp = require('jimp');
+const moment = require('moment');
+const dateFormat = require('dateformat');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
