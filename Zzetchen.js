@@ -858,8 +858,6 @@ client.on("message", message => {
 
 ///////////////////////////////////////////////////////////////////////--------------///////////////MOVE 
 
-
-var prefix = "!";
 client.on('message', message => {
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
@@ -894,7 +892,6 @@ message.react("❌")
 
 /////////////////////////////////////////////////--------///////////////////////////ban
 client.on('message', message => {
-	var prefix = "!"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -937,7 +934,6 @@ client.on('message', message => {
 
 ////////////unban
 client.on('message' , message => {
-    var prefix = "!";
     let user = message.mentions.users.first()|| client.users.get(message.content.split(' ')[1])
     if(message.content.startsWith(prefix + 'unban')) {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('❌|**\`ADMINISTRATOR\`لا توجد لديك رتبة`**');
@@ -1072,7 +1068,6 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-	var prefix = "!";
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
@@ -1202,7 +1197,6 @@ setInterval(function(){})
 ///////////////////////////////////////////////////////////////////////// ///////////////-//////////////date
 const HeRo = new Discord.Client();
 client.on('message', message => {
-var prefix = "!";
 
     if (message.content === prefix + "date") {
         if (!message.channel.guild) return message.reply('** This command only for servers **');  
@@ -1240,7 +1234,6 @@ member.addRole(ALPHACODES[member.user.id].roles.shift());
 ////////////////-----------------------/////Send
 
 client.on('message' , message => {
-  var prefix = "!";
   if(message.author.bot) return;
   if(message.content.startsWith(prefix + "send")) {
     let args = message.content.split(" ").slice(1);
@@ -1648,7 +1641,6 @@ voiceChannel.leave();
 /////////////////////////////-----------------//////all BOTS
 client.on('message', message => {
      if(!message.channel.guild) return;
-var prefix = "!";
                 if(message.content.startsWith(prefix + 'allbots')) {
 
     
@@ -1740,7 +1732,6 @@ client.on('guildCreate', guild => {
 ////////////////////////////////////////// ////////////////////// ////////////////////// /////////////////////////Rsala le Owner
 
 client.on('message', ReBeeL => {
-  var prefix = "!";
     if(ReBeeL.author.bot) return;
       if(ReBeeL.content.startsWith(prefix + "owner")) {
         let args = ReBeeL.content.split(" ").slice(1);
@@ -2614,7 +2605,7 @@ client.on('message',function(message) {
 
 
 
-var prefix = "!";
+
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -2928,7 +2919,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  var prefix = "!";
 
            if (message.content === prefix + "dt") {
            if (!message.channel.guild) return message.reply('** This command only for servers **');  
@@ -3000,7 +2990,6 @@ client.on('message', message => {
 ///////////////////////////////////////deafen
 
  client.on('message', message => {
-        var prefix = "!";
         if(message.content.startsWith(prefix + 'deafen')) {
       if (message.mentions.users.size === 0 && message.mentions.roles.size === 0) {
         return message.reply('**يجب عليك المنشن اولاّ**:x:').catch(console.error);
@@ -3023,7 +3012,6 @@ client.on('message', message => {
     });  
      
     client.on('message', async message =>{
-      var prefix = "!";
       if(message.content.startsWith(prefix + 'undeafen')) {
      
     if (message.mentions.users.size === 0 && message.mentions.roles.size === 0) {
@@ -3049,7 +3037,6 @@ client.on('message', message => {
 
 /////////////////////////////////////////Mute all 
 client.on('message', message => {
-    var prefix = "!";
   if(message.content === prefix + "muteall") {
                if(!message.channel.guild) return message.reply('** This command only for servers**');
   
@@ -3067,7 +3054,6 @@ client.on('message', message => {
   
   });
     client.on('message', message => {
-      var prefix = "!";
   if(message.content === prefix + "unmuteall") {
             if(!message.channel.guild) return message.reply('** This command only for servers**');
   
@@ -3310,8 +3296,7 @@ function Days(date) {
 }
 ///////----------------------------------------------------///GAMING INFO CHANNEL
 client.on('message', message => {//GAMING
-    if(!message.channel.guild) return;//GAMING
-var prefix = "!";//GAMING
+    if(!message.channel.guild) return;//GAMING //GAMING
 if(message.content.startsWith(prefix + 'channel')) {//Alpha Codes
     let channel = message.channel//GAMING
     var embed = new Discord.RichEmbed()//GAMING
@@ -3331,7 +3316,6 @@ if(message.content.startsWith(prefix + 'channel')) {//Alpha Codes
 
 
 
-var prefix = "!";
 var cats = ["https://cdn.pg.sa/kQnLdE3Iqy.jpg","https://cdn.pg.sa/9NVzokjdye.jpg","https://cdn.pg.sa/FYchkbgg02.jpg","https://cdn.pg.sa/oxEQmBE6Pw.jpg","https://cdn.pg.sa/DwYG1JAibu.jpg","https://cdn.pg.sa/3VOKej7Rze.jpg","https://cdn.pg.sa/TdwTWp1qCw.jpg","https://cdn.pg.sa/gzrwDsZ85u.jpg","https://cdn.pg.sa/Ndpob7WF1c.jpg"]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
@@ -3515,7 +3499,6 @@ console.log('[38ab] Send By: ' + message.author.username)
 ///////////////////
 ////////////////////////////////////////-/////////////////////////////////////////Rps
 client.on("message", function(message) {
-	var prefix = "!";
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
     let messageRPS = message.content.split(" ").slice(2).join(" ");
@@ -3615,7 +3598,6 @@ client.on('message', message => {
 /////////////////////////////////////hal t3lam/
 
 client.on('message', message => {
-var prefix = "!";
 var cats = ["http://www.shuuf.com/shof/uploads/2015/09/09/jpg/shof_b9d73150f90a594.jpg","https://haltaalam.info/wp-content/uploads/2015/05/0.208.png","https://haltaalam.info/wp-content/uploads/2015/05/266.png","https://haltaalam.info/wp-content/uploads/2015/05/250.png","https://haltaalam.info/wp-content/uploads/2017/02/0.2517.png","https://pbs.twimg.com/media/CP0mi02UAAA3U2z.png","http://www.shuuf.com/shof/uploads/2015/08/31/jpg/shof_3b74fa7295ec445.jpg","http://www.shuuf.com/shof/uploads/2015/08/22/jpg/shof_fa3be6ab68fb415.jpg","https://pbs.twimg.com/media/CSWPvmRUcAAeZbt.png","https://pbs.twimg.com/media/B18VworIcAIMGsE.png"]
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'هل تعلم')) {
@@ -3626,7 +3608,6 @@ message.channel.sendEmbed(cat);
 });
 //Franko
 client.on('message', message => {
-var prefix = "!";
 var cats = ["http://www.shuuf.com/shof/uploads/2015/09/09/jpg/shof_b9d73150f90a594.jpg","https://haltaalam.info/wp-content/uploads/2015/05/0.208.png","https://haltaalam.info/wp-content/uploads/2015/05/266.png","https://haltaalam.info/wp-content/uploads/2015/05/250.png","https://haltaalam.info/wp-content/uploads/2017/02/0.2517.png","https://pbs.twimg.com/media/CP0mi02UAAA3U2z.png","http://www.shuuf.com/shof/uploads/2015/08/31/jpg/shof_3b74fa7295ec445.jpg","http://www.shuuf.com/shof/uploads/2015/08/22/jpg/shof_fa3be6ab68fb415.jpg","https://pbs.twimg.com/media/CSWPvmRUcAAeZbt.png","https://pbs.twimg.com/media/B18VworIcAIMGsE.png"]
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'halt3lam')) {
@@ -4132,7 +4113,6 @@ const adkar = [
   });
 /////////////////////////////////////////////-////////////////////////////////////nokat
 client.on('message', message => {
-var prefix = "!";
 var cats = ["http://palestine-kitchen.ps/wp-content/uploads/2017/12/%D9%86%D9%83%D8%AA-%D8%AF%D8%A8%D8%A7%D9%86%D8%A9.png","http://www.i7lm.com/wp-content/uploads/2017/04/136769797816.jpg","https://4.bp.blogspot.com/-p62zmDIDXmI/WKzqNt9smaI/AAAAAAAAC4Q/sW_bSIB8OaQhwOYFeplc3uzz8PBN7l3YACEw/s1600/13602501135.jpg","https://www.universemagic.com/images/2016/03/7938-2-or-1457539273.jpg","https://1.bp.blogspot.com/-yFk-FzHSyE8/WR9fmPcsCUI/AAAAAAAAE6c/AmvjLadOiLY9GiCqMLHgA121bY2RS_dCwCLcB/s1600/%25D9%2586%25D9%2583%25D8%25AA%2B%25D9%2585%25D8%25B6%25D8%25AD%25D9%2583%25D8%25A9%2B1.jpg","https://l7zaat.com/wp-content/uploads/2018/02/423.jpg","https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg","https://i.fatafeat.com/storage/attachments/15/image3_698123_large.jpg","http://www.shuuf.com/shof/uploads/2018/02/08/jpg/shof_97d686082bdb0a2.jpg"];
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'نكت')) {
@@ -4826,7 +4806,6 @@ client.on("ready", () => {
 	console.log(`Quran bot is in ${client.guilds.size} servers `)
 });
 
-var PREFIX = "!";
 
 
 
@@ -5204,7 +5183,7 @@ client.on('ready', () => {
   });
 
 client.on('message', message => {
-var prefix = "!";
+
       if(message.content === prefix + "hchannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
@@ -5217,7 +5196,6 @@ var prefix = "!";
 
 
 client.on('message', message => {
-var prefix = "!";
       if(message.content === prefix + "schannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
