@@ -680,9 +680,8 @@ message.author.sendEmbed(embed)
 
 
 //////////////////////////////////----------------------------/////////////////////----////////ID
-client.on("message", msg => {
-           var prefix = "!";
-  if(msg.content.startsWith (prefix + "id")) {
+client.on("message", msg => {     
+  if(msg.content.startsWith ("!id")) {
     if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
       const embed = new Discord.RichEmbed();
   embed.addField("🌹Ŋame ", `**[ ${msg.author.username}#${msg.author.discriminator} ]**`, true)
@@ -860,9 +859,8 @@ client.on("message", message => {
 ///////////////////////////////////////////////////////////////////////--------------///////////////MOVE 
 
 
-
+var prefix = "!";
 client.on('message', message => {
-	var prefix = "!";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
