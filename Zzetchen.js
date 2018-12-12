@@ -9,6 +9,7 @@ const jimp = require('jimp');
 const moment = require('moment');
 const dateFormat = require('dateformat');
 
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
  client.user.setActivity("ZzetchenMC !",{type: 'watching'})
