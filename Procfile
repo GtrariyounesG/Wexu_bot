@@ -7,3 +7,6 @@ nodesix: node wl.js
 nodeseven: node ga.js
 nodeeight: node me.js
 nodeeleven: node Zzetchen.js
+cofeone: node cofesexy.js
+cofetwo: node cofesexy2.js
+cofethree: node cofesexy3.js
