@@ -8,7 +8,7 @@ const Canvas = require('canvas');
 
 client.on ("guildMemberAdd", member => {
   
-   var role = member.guild.roles.find ("name", "Čø.");
+   var role = member.guild.roles.find ("name", "✽ Member");
    member.addRole (role);
   
 })
