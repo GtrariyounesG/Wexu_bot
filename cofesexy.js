@@ -107,10 +107,10 @@ client.on('message', message => {
   if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  if (message.mentions.users.size < 1) return message.reply("**ظ…ظ†ط´ظ† ط´ط®طµ**");
-  if(!reason) return message.reply ("**ط§ظƒطھط¨ ط³ط¨ط¨ ط§ظ„ط·ط±ط¯**");
+  if (message.mentions.users.size < 1) return message.reply("**Use $kick @NAME**");
+  if(!reason) return message.reply ("**..**");
   if (!message.guild.member(user)
-  .kickable) return message.reply("**ظ„ط§ظٹظ…ظƒظ†ظ†ظٹ ط·ط±ط¯ ط´ط®طµ ط§ط¹ظ„ظ‰ ظ…ظ† ط±طھط¨طھظٹ ظٹط±ط¬ظ‡ ط§ط¹ط·ط§ط، ط§ظ„ط¨ظˆطھ ط±طھط¨ظ‡ ط¹ط§ظ„ظٹ**");
+  .kickable) return message.reply("**.**");
 
   message.guild.member(user).kick();
 
