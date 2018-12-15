@@ -10,3 +10,6 @@ nodeeleven: node Zzetchen.js
 cofeone: node cofesexy.js
 cofetwo: node cofesexy2.js
 cofethree: node cofesexy3.js
+FMone: node FM.js
+FMtwo: node FM2.js
+FMthree: node FM3.js
