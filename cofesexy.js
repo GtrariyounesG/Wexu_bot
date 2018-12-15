@@ -65,8 +65,8 @@ client.on('message', message => {
   let b5bzlog = client.channels.find("name", "log");
  
   if(!b5bzlog) return message.reply("I've detected that this server doesn't have a log text channel.");
-  if (message.mentions.users.size < 1) return message.channel.send(`$ban @NAME 3d Disrespecting`);
-  if(!reason) return message.channel.send(`https://cdn.pg.sa/fjxlms81nk.png`);
+  /*if (message.mentions.users.size < 1) return message.channel.send(`.`);
+  if(!reason) return message.channel.send(`https://cdn.pg.sa/fjxlms81nk.png`);*/
   if (!message.guild.member(user)
   .bannable) return message.reply(`This User Is Have High Role !`);
  
