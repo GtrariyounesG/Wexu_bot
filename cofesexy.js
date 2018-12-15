@@ -143,7 +143,7 @@ const prefix = "$";
   .addField("User:",  `[ + ${user.tag} + ]`)
   .addField("By:", `[  + ${message.author.tag} +  ]`)
   .addField("Reason:", `[ + ${reason} +  ]`)
-  client.channels.get("492583022982463500").send({embed : banembed})
+  client.channels.get("523500323751591956").send({embed : banembed})
 }
 });
 
