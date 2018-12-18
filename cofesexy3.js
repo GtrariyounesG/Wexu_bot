@@ -20,6 +20,8 @@ client.on ("guildMemberAdd", member => {
 
 
 
+
+
 client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
   console.log('                          Bot By : ImD3s_x');
