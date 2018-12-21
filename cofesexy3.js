@@ -43,6 +43,18 @@ client.on ("guildMemberAdd", member => {
    member.addRole (role);
   
 })
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "» Čǿ. 0.9 K");
+   member.addRole (role);
+  
+})
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "» Čǿ. 1 K");
+   member.addRole (role);
+  
+})
 
 
 
