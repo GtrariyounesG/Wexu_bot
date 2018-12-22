@@ -78,6 +78,33 @@ client.on('ready',  () => {
 client.user.setStatus("dnd");
 });
 
+client.on('message', message => {
+              if (!message.channel.guild) return;
+      if(message.content =='#count')
+      var n3k4a = new Discord.RichEmbed()
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL)
+      .setTitle('🌷| Members info')
+      .addBlankField(true)
+      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
+      message.channel.send(n3k4a );
+    });
+
+
+
+client.on('guildMemberAdd', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('508612532559413258').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('508612678764462090').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+});
+
+client.on('guildMemberRemove', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('508612532559413258').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('508612678764462090').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+});
 
 
 
