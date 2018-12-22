@@ -278,7 +278,7 @@ client.on("guildMemberAdd", member => {
 })
 
 
-const yourID = "399697177259147275;
+const yourID = "399697177259147275";
 const setupCMD = "$roler"
 let initialMessage = `**@everyone  rolereact**
 **React to the messages below to get role. If you would like to remove the role remove your reaction!** `;
