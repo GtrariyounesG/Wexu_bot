@@ -176,7 +176,7 @@ client.on('guildMemberAdd',async member => {
     if(welcome[member.guild.id].onoff === 'Off') return;
     const Canvas = require('canvas');
     const jimp = require('jimp');
-    const w = ['./welcome2.png'];
+    const w = ['./img/wl2.png'];
           let Image = Canvas.Image,
               canvas = new Canvas(800, 300),
               ctx = canvas.getContext('2d');
@@ -283,7 +283,7 @@ const setupCMD = "$roler"
 let initialMessage = `**@everyone  rolereact**
 **React to the messages below to get role. If you would like to remove the role remove your reaction!** `;
 const roles = ["GAY", "KID", "+18", "16-17", "funny", "zamel", "3nab", "bitch", "m3wa9", "singel"];//رتب
-const reactions = [":32:", "👶", "😊", "🔞", "😂", "😘", "🍇", "💋", "🙅", "💔"];//رياكشن
+const reactions = ["", "👶", "😊", "🔞", "😂", "😘", "🍇", "💋", "🙅", "💔"];//رياكشن
 
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
 
