@@ -454,8 +454,32 @@ welcomer.sendFile(canvas.toBuffer())
 
 
 
+client.on("message", message => {
+if (message.content === ("$mem")) {
+let channel = message.client.channels.find('name', "member");
+let muteRole = client.guilds.get(message.guild.id).channels.find('name', 'member');
+if (!muteRole) return message.reply("** قم بإنشآء الرومات اولا عن طريق الامر g!Ch **").catch(console.error);
+if(!message.channel.guild) return message.reply('**Commands in the server**');
+if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
+channel.edit({name : `Members「${message.guild.memberCount}」`});
+message.channel.sendMessage("تم تفعيل الروم بنجاح")
+      
+  }
+});
 
 
+client.on("message", message => {
+if (message.content === ("g!Ch ac1")) {
+let channel = message.client.channels.find('name', "member");
+let muteRole = client.guilds.get(message.guild.id).channels.find('name', 'member');
+if (!muteRole) return message.reply("** قم بإنشآء الرومات اولا عن طريق الامر g!Ch **").catch(console.error);
+if(!message.channel.guild) return message.reply('**Commands in the server**');
+if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
+channel.edit({name : `memberCount「${message.guild.memberCount}」`});
+message.channel.sendMessage("تم تفعيل الروم بنجاح")
+      
+  }
+});
 
 
 
