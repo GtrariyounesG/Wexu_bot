@@ -659,36 +659,16 @@ client.on('message', message => {
       message.channel.send(IzRo);
     });
 
-
-  client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("526037247879806976");
-    if (!channel) {
-        console.log("!the channel id it's not correct");
-        return;
-    }
-    if (member.id == client.user.id) {
-        return;
-    }
-    console.log('-');
-    var guild;
+client.on('guildMemberAdd', member => {
+     var guild;
     while (!guild)
-        guild = client.guilds.get("526037247879806976");
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            if (dat[Inv])
-                if (dat[Inv] < Invite.uses) {
- channel.send(`**#- Wellllllcome To ~~Coffee Server~~ :coffee: **
+        guild = client.guilds.get("507855515712487426") // Server ID
+let channel = member.guild.channels.find('name', '・coffee'); //Room Name
+  if (!channel) return; 
+client.channels.get("526037247879806976").send(`**#- Wellllllcome To ~~Coffee Server~~ :coffee: **
                   **-> User :** ${member} 
-                         **-> Invited BY:** ${Invite.inviter}`) ;         
- }
-            dat[Inv] = Invite.uses;
-       
-       });
-    });
+                         **-> Invited BY:** ${Invite.inviter}`) // Msg & Room ID
 });
-
-
 
 
 
