@@ -665,9 +665,7 @@ client.on('guildMemberAdd', member => {
         guild = client.guilds.get("507855515712487426") // Server ID
 let channel = member.guild.channels.find('name', '・coffee'); //Room Name
   if (!channel) return; 
-client.channels.get("526037247879806976").send(`**#- Wellllllcome To ~~Coffee Server~~ :coffee: **
-                  **-> User :** ${member} 
-                         **-> Invited BY:** ${Invite.inviter}`) // Msg & Room ID
+client.channels.get("526037247879806976").send(`**#- Wellllllcome To ~~Coffee Server~~ :coffee: **`) // Msg & Room ID
 });
 
 
