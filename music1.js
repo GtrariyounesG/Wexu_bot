@@ -13,7 +13,7 @@ const prefix = "1";
 
 
 
-const adminprefix = "$";
+const adminprefix = "1";
 const developers = ['399697177259147275'];
 
 console.log("Randy ");
