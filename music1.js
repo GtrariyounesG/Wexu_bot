@@ -495,4 +495,4 @@ if (x) x.join();
 });
 
 
-client.login(process.env.1play);
+client.login(process.env.opl);
