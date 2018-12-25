@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
-const devs = ['389090790984515594','350408440566382592'];
-var prefix = "1";
-const adminprefix = "1"
+var prefix = "3";
+const adminprefix = "3"
 
  client.on("message", message => {
-    if (message.content === "1help") {
+    if (message.content === "3help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
@@ -460,4 +459,4 @@ const codes = {
 
 
 
-client.login(process.env.opl);
+client.login(process.env.thpl);
