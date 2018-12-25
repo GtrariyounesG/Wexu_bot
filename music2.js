@@ -487,7 +487,7 @@ function play(guild, song) {
 
 
 client.on('ready', () => {
-var x = client.channels.get("526039415265558528"); ///Voice Room
+var x = client.channels.get("526039415802429450"); ///Voice Room
 if (x) x.join();
 });
 
