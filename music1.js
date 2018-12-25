@@ -345,7 +345,7 @@ client.on('message', async msg => {
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "made by : taino"
+              text: "made by : itzZa1D"
             }
           }
         });
