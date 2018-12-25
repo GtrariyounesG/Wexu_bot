@@ -1,15 +1,16 @@
 const Discord = require('discord.js');
 var prefix = "1";
 
- client.on("message", message => {
-    if (message.content === "1help") {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#00FF00")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`
-
-        **__Music orders__**
-**
+client.on("message", message => {
+ if (message.content === "1help") {
+  const embed = new Discord.RichEmbed() 
+      .setColor("#ffff00")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+**	  
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+                   💎 『 Coffe Music 』 💎
+                        
 『${prefix}play / لتشغيل أغنية برآبط أو بأسم』
 『${prefix}skip / لتجآوز الأغنية الحآلية』
 『${prefix}pause / إيقآف الأغنية مؤقتا』
@@ -18,13 +19,13 @@ var prefix = "1";
 『${prefix}stop / لإخرآج البوت من الروم』
 『${prefix}np / لمعرفة الأغنية المشغلة حآليا』
 『${prefix}queue / لمعرفة قآئمة التشغيل』
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+**
+`)
+message.author.sendEmbed(embed)
 
-
- **`)
-   message.author.sendEmbed(embed)
-   
-   }
-   });
+}
+});  
    
    
    
