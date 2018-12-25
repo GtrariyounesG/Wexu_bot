@@ -160,7 +160,7 @@ client.on('message', async msg => {
                             color: 15158332,
                             fields: [{
                                 name: "❌ خطأ",
-                                value: 'تم ادخال قيمه غير صحيحه .. سيتم الغاء التشغيل
+                                value: 'تم ادخال قيمه غير صحيحه .. سيتم الغاء التشغيل'
                               }
                             ]
                           }
@@ -342,7 +342,7 @@ client.on('message', async msg => {
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "made by : taino"
+              text: "made by : itzZa1D"
             }
           }
         });
