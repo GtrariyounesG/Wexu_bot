@@ -492,4 +492,4 @@ if (x) x.join();
 });
 
 
-client.login(process.env.3play);
+client.login(process.env.thpl);
