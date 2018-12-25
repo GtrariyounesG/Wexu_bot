@@ -9,11 +9,11 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 const gif = require("gif-search");
 const client = new Discord.Client({disableEveryone: true});
-const prefix = "1";
+const prefix = "2";
 
 
 
-const adminprefix = "$";
+const adminprefix = "2";
 const developers = ['399697177259147275'];
 
 console.log("Randy ");
