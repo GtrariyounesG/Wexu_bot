@@ -6,6 +6,9 @@ const moment = require('moment');
 const jimp = require('jimp');
 const Canvas = require('canvas');
 
+
+
+
 client.on ("guildMemberAdd", member => {
   
    var role = member.guild.roles.find ("name", "» Čǿ. 0.3 K");
