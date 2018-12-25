@@ -458,3 +458,13 @@ if (message.content.startsWith(prefix + 'setstream')) {
     message.channel.sendMessage(`Streaming: **${argresult}`)
 }
 	});
+
+
+
+client.on('ready', () => {
+var x = client.channels.get("آيدي الروم"); ///Voice Room
+if (x) x.join();
+});
+
+
+client.login(process.env.1play);
