@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 var prefix = "2";
-const adminprefix = "2"
 
  client.on("message", message => {
     if (message.content === "2help") {
