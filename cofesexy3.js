@@ -57,6 +57,20 @@ client.on ("guildMemberAdd", member => {
 })
 
 
+client.on("guildMemberAdd", async member => {
+  let moment2 = require('moment-duration-format'),
+      moment = require("moment"),
+      date = moment.duration(new Date() - member.user.createdAt).format("d");
+
+  if(date < 30) {
+    member.ban("Member account age is lower than 30 days.")
+  }
+});
+
+
+
+
+
 
 const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
  
