@@ -62,10 +62,9 @@ client.on('message', message => {
                     col.first().delete();
                     color = col.first().content;
                     let embed = new Discord.RichEmbed()
-                    .addField(`**Message :**`, `**${text}**`)
-                    .addField(`**Message From :**`,`<@${message.author.id}>` , true)
+                    .addField(`**${text}**`)
                     .setColor(color) 
-                    .setFooter(client.user.username)
+                    .setFooter(`Coffee Shop !`)
       message.channel.send(embed)
                   });
                 });
