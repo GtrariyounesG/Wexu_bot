@@ -266,31 +266,52 @@ client.on("message", message => {
 
 
 
-const invites = {};
 
-const wait = require('util').promisify(setTimeout);
 
-client.on('ready', () => {
-  wait(1000);
 
-  client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
+var dat = JSON.parse("{}");
+function forEachObject(obj, func) {
+    Object.keys(obj).forEach(function (key) { func(key, obj[key]) });
+}
+client.on("ready", () => {
+    var guild;
+    while (!guild)
+        guild = client.guilds.get("524725174491283486");
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            dat[Inv] = Invite.uses;
+        });
     });
-  });
 });
 
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "hub");
-    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
-  });
-});
 
+
+client.on("guildMemberAdd", (member) => {
+    let channel = member.guild.channels.get("528351127696310272");
+    if (!channel) {
+        console.log("!the channel id it's not correct");
+        return;
+    }
+    if (member.id == client.user.id) {
+        return;
+    }
+    console.log('-');
+    var guild;
+    while (!guild)
+        guild = client.guilds.get("524725174491283486");
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            if (dat[Inv])
+                if (dat[Inv] < Invite.uses) {
+ channel.send(`${member} **Invited BY:** ${Invite.inviter} `) ;         
+ }
+            dat[Inv] = Invite.uses;
+       
+       });
+    });
+});
 
 
 
