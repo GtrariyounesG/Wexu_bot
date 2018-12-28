@@ -8,8 +8,9 @@ nodeseven: node ga.js
 nodeeight: node me.js
 nodeeleven: node Zzetchen.js
 cofeone: node cofesexy.js
-cofetwo: node Helper.js
+cofetwo: node cofesexy2.js
 cofethree: node cofesexy3.js
+Helper: node Helper.js
 FMone: node FM.js
 FMtwo: node FM2.js
 FMthree: node FM3.js
