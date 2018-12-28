@@ -64,7 +64,7 @@ client.on('message', message => {
                     let embed = new Discord.RichEmbed()
                     .addField(`**${text}**`)
                     .setColor(color) 
-                    .setFooter(`Coffee Shop !`)
+                    .setFooter(`${message.guild.name}`)
       message.channel.send(embed)
                   });
                 });
