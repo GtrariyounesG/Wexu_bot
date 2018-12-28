@@ -62,7 +62,7 @@ client.on('message', message => {
                     col.first().delete();
                     color = col.first().content;
                     let embed = new Discord.RichEmbed()
-                    .addField(`**${text}**`)
+                    .addField(`****`, `**${text}**`)
                     .setColor(color) 
                     .setFooter(`${message.guild.name}`)
       message.channel.send(embed)
