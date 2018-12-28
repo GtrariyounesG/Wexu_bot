@@ -56,7 +56,7 @@ client.on('message', message => {
 if (command == "embed") {
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
-    .setColor(0x23b2d6)
+    .setColor(BLUE)
     message.channel.sendEmbed(say);
     message.delete();
   }
