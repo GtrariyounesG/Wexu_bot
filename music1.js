@@ -16,7 +16,6 @@ const ytdl = require('ytdl-core');
 
 const fs = require('fs');
 
-const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
@@ -344,10 +343,6 @@ client.on('message', message => {
       message.channel.send(helpEmbed);
     }
 });
-
-
-
-client.login(process.env.BOT_TOKEN);
 
 
 
