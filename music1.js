@@ -14,12 +14,12 @@ var adminprefix = '1'
 /// Help !
 
 client.on("message", message => {
- if (message.content === "1help") {
+ if (message.content === "!help") {
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
-       .setDescription(`
-                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+      .setDescription(`
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
                    💎 『 أوامر الموسيقى 』 💎
                         
 **[ 1 ]** **البريفكس**
