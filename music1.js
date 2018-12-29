@@ -13,43 +13,26 @@ var adminprefix = '1'
 
 /// Help !
 
-client.on("message", message => {
- if (message.content === "!help") {
-  const embed = new Discord.RichEmbed() 
-      .setColor("#ffff00")
-      .setThumbnail(message.author.avatarURL)
-      .setDescription(`
-                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-                   💎 『 أوامر الموسيقى 』 💎
-                        
-**[ 1 ]** **البريفكس**
-
-:musical_note:1play | لتشغيل اغنية
-:musical_note:1join | دخول رومك الصوتي
-:musical_note:1disconnect | الخروج من رومك الصوتي
-:musical_note:1skip | تخطي الأغنية
-:musical_note:1pause | ايقاف الاغنية مؤقتا
-:musical_note:1resume | تكملة الاغنية
-:musical_note:1queue | اظهار قائمة التشغيل
-:musical_note:1np | اظهار الاغنية اللي انت مشغلها حاليا
-:musical_note:1avatar | افاتار الشخص المطلوب
-:musical_note:1ping | معرفة ping البوت
-                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-
-`)
-
-
-message.author.sendEmbed(embed)
-
-}
-});
 
 client.on('message', message => {
      if (message.content === "1help") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField("DM ! :mailbox_with_mail: ")
+  .addField("                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+  .addField("                   💎 『 أوامر الموسيقى 』 💎                       
+  .addField("**[ 1 ]** **البريفكس**
+  .addField(":musical_note:1play | لتشغيل اغنية ")
+  .addField(":musical_note:1join | دخول رومك الصوتي ")
+  .addField(":musical_note:1disconnect | الخروج من رومك الصوتي ")
+  .addField(":musical_note:1skip | تخطي الأغنية ")
+  .addField(":musical_note:1pause |ايقاف الاغنية مؤقتا ")
+  .addField(":musical_note:1resume | تكملة الاغنية ")
+  .addField(":musical_note:1queue | اظهار قائمة التشغيل ")
+  .addField(":musical_note:1np | اظهار الاغنية اللي انت مشغلها حاليا ")
+  .addField(":musical_note:1avatar | افاتار الشخص المطلوب ")
+  .addField(":musical_note:1ping | معرفة ping البوت ")
+  .addField("                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● ")
      
      
      
