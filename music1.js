@@ -34,7 +34,9 @@ client.on("message", message => {
 :musical_note:1np | اظهار الاغنية اللي انت مشغلها حاليا
 :musical_note:1avatar | افاتار الشخص المطلوب
 :musical_note:1ping | معرفة ping البوت
-                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+
+`)
 
 
 message.author.sendEmbed(embed)
