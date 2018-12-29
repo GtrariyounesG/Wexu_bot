@@ -11,13 +11,34 @@ const client = new Discord.Client({disableEveryone: true});
 const prefix = "1";
 var adminprefix = '1'
 
+/// Help !
 
+        client.on('message', message => {
+          var prefix = '1';
+          if (message.content.startsWith(prefix + 'help')) {
+      let embed = new Discord.RichEmbed()
+        .setTitle('**أوامر الميوزك...**')
+        .setDescription('**برفكس البوت (!)**')
+        .addField('play | لتشغيل اغنية')
+        .addField('join | دخول رومك الصوتي')
+        .addField('disconnect | الخروج من رومك الصوتي')
+        .addField('skip | تخطي الأغنية')
+        .addField('pause | ايقاف الاغنية مؤقتا')
+        .addField('resume | تكملة الاغنية')
+        .addField('queue | اظهار قائمة التشغيل')
+        .addField('np | اظهار الاغنية اللي انت مشغلها حاليا')
+        .addField('avatar | افاتار الشخص المطلوب')
+        .addField('ping | معرفة ping البوت')
+	.setColor("#ff0000")
+      message.channel.send(embed)
+      }
+  });
 
 /// Stats + Name + Avatar !
 
 const developers = ['399697177259147275'];
 
-console.log("Randy ");
+console.log("Za1DDDDdd");
 
 client.on('ready', () => {
     console.log(`Logged as ${client.user.tag}By : zaid`)
@@ -357,26 +378,6 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
 
-
-client.on('message', message => {
-    if (message.content === '1help') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('play | لتشغيل اغنية')
-        .addField('join | دخول رومك الصوتي')
-        .addField('disconnect | الخروج من رومك الصوتي')
-        .addField('skip | تخطي الأغنية')
-        .addField('pause | ايقاف الاغنية مؤقتا')
-        .addField('resume | تكملة الاغنية')
-        .addField('queue | اظهار قائمة التشغيل')
-        .addField('np | اظهار الاغنية اللي انت مشغلها حاليا')
-        .addField('avatar | افاتار الشخص المطلوب')
-        .addField('ping | معرفة ping البوت')
-	.setColor("#ff0000")
-      message.channel.send(helpEmbed);
-    }
-});
 
 
 
