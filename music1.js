@@ -15,7 +15,6 @@ var adminprefix = '1'
 
 /// Stats + Name + Avatar !
 
-const adminprefix = "1";
 const developers = ['399697177259147275'];
 
 console.log("Randy ");
@@ -27,26 +26,26 @@ client.on('ready', () => {
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
-  if (message.content.startsWith(adminprefix + 'play')) {
+  if (message.content.startsWith(prefix + 'play')) {
     client.user.setGame(argresult);
       message.channel.send(`تم تغيير البلاينق الى   ${argresult}`)
   } else 
-     if (message.content === (adminprefix + "leave")) {
+     if (message.content === (prefix + "leave")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
+  if (message.content.startsWith(prefix + 'wt')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`تَم تغيير الواتشينق الى   ${argresult}`)
   } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
+  if (message.content.startsWith(prefix + 'ls')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`تَم تغيير الليسينينق الى   ${argresult}`)
   } else
-  if (message.content.startsWith(adminprefix + 'st')) {
+  if (message.content.startsWith(prefix + 'st')) {
     client.user.setGame(argresult, "https://www.twitch.tv/Randy");
       message.channel.send(`تم تغييرك حالتك بالتويتش الى   ${argresult}`)
   }
-  if (message.content.startsWith(adminprefix + 'name')) {
+  if (message.content.startsWith(prefix + 'name')) {
   client.user.setUsername(argresult).then
       message.channel.send(`جاري تغيير الأسم لـ ..${argresult} `)
 } else
