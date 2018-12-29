@@ -192,23 +192,23 @@ client.on('message', async msg => {
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 
-        if (!voiceChannel) return msg.channel.send("انت لم تدخل روم صوتي");
+        if (!voiceChannel) return msg.channel.send("Join a Voice CHannel First.");
 
         const permissions = voiceChannel.permissionsFor(msg.client.user);
 
         if (!permissions.has('CONNECT')) {
 
-			return msg.channel.send("ليست لدي صلاحيات للدخول الى الروم");
+			return msg.channel.send("I don't have permissions to join this room");
         }
 
 		if (!permissions.has('SPEAK')) {
 
-			return msg.channel.send("انا لا يمكنني التكلم في هاذه الروم");
+			return msg.channel.send("I can't speak in this room");
 		}
 
 		if (!permissions.has('EMBED_LINKS')) {
 
-			return msg.channel.sendMessage("انا لا املك صلاحيات ارسال روابط")
+			return msg.channel.sendMessage("I Don't have permissions to send link ➙`EMBED_LINKS`")
 		}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -252,7 +252,7 @@ client.on('message', async msg => {
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('لم يتم اختيار الاغنية');
+						return msg.channel.send('Time out : you did not select a song');
                     }
 
 					const videoIndex = parseInt(response.first().content);
@@ -271,31 +271,31 @@ client.on('message', async msg => {
 
 	} else if (command === `skip`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("يجب ان تكون في روم صوتي");
-        if (!serverQueue) return msg.channel.send("ليست هناك اغاني ليتم التخطي");
+		if (!msg.member.voiceChannel) return msg.channel.send("You Have to be in a Voice CHannel");
+        if (!serverQueue) return msg.channel.send("No Songs to skip");
 
-		serverQueue.connection.dispatcher.end('تم تخطي الاغنية');
+		serverQueue.connection.dispatcher.end(':fast_forward: Skipped');
         return undefined;
 
 	} else if (command === `stop`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("يجب ان تكون في روم صوتي");
+		if (!msg.member.voiceChannel) return msg.channel.send("You Have to be in a Voice CHannel");
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
 
 		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end('تم ايقاف الاغنية لقد خرجت من الروم الصوتي');
+		serverQueue.connection.dispatcher.end('Song Stopped');
         return undefined;
 
 	} else if (command === `vol`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("يجب ان تكون في روم صوتي");
-		if (!serverQueue) return msg.channel.send('يعمل الامر فقط عند تشغيل مقطع صوتي');
-        if (!args[1]) return msg.channel.send(`لقد تم تغير درجة الصوت الى**${serverQueue.volume}**`);
+		if (!msg.member.voiceChannel) return msg.channel.send("You Have to be in a Voice CHannel");
+		if (!serverQueue) return msg.channel.send('This command works only when playing a video');
+        if (!args[1]) return msg.channel.send(`Volume changed to : **${serverQueue.volume}**`);
 
 		serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
 
-        return msg.channel.send(`درجة الصوت الان**${args[1]}**`);
+        return msg.channel.send(`Volume is : **${args[1]}**`);
 
 	} else if (command === `np`) {
 
@@ -321,15 +321,15 @@ client.on('message', async msg => {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('تم الايقاف');
+			return msg.channel.send('Stoped');
 		}
-		return msg.channel.send('في انتظار تشغيل المقطع');
+		return msg.channel.send('waiting for resumeing the video');
 	} else if (command === "resume") {
 
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
-            return msg.channel.send('تم التشغيل');
+            return msg.channel.send('Resumeing');
 
 		}
 		return msg.channel.send('Queue is empty!');
@@ -374,7 +374,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
-		else return msg.channel.send(`**${song.title}**, تمت اضافة المقطع الى قائمة الانتظار `);
+		else return msg.channel.send(`**${song.title}**, Added the video to the queue.`);
 	}
 	return undefined;
 }
@@ -401,7 +401,6 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
-
 
 
 
