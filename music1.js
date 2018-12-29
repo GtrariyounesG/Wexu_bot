@@ -10,8 +10,66 @@ const fs = require('fs');
 const client = new Discord.Client({disableEveryone: true});
 const prefix = "1";
 var adminprefix = '1'
-/////////////////////////
-////////////////////////
+
+
+
+/// Stats + Name + Avatar !
+
+const adminprefix = "1";
+const developers = ['399697177259147275'];
+
+console.log("Randy ");
+
+client.on('ready', () => {
+    console.log(`Logged as ${client.user.tag}By : zaid`)
+})
+
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+  if (message.content.startsWith(adminprefix + 'play')) {
+    client.user.setGame(argresult);
+      message.channel.send(`تم تغيير البلاينق الى   ${argresult}`)
+  } else 
+     if (message.content === (adminprefix + "leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`تَم تغيير الواتشينق الى   ${argresult}`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'ls')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`تَم تغيير الليسينينق الى   ${argresult}`)
+  } else
+  if (message.content.startsWith(adminprefix + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/Randy");
+      message.channel.send(`تم تغييرك حالتك بالتويتش الى   ${argresult}`)
+  }
+  if (message.content.startsWith(adminprefix + 'name')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`جاري تغيير الأسم لـ ..${argresult} `)
+} else
+if (message.content.startsWith(adminprefix + 'avatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`جاري تغيير الأفتار... : `);
+}
+});
+
+
+/// AFK - Voice Room    
+
+client.on('ready', () => {
+var x = client.channels.get("526039415265558528"); 
+if (x) x.join();
+}); 
+
+
+
+
+
+
+/// Ping !
 
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
@@ -32,9 +90,15 @@ client.on('message', async msg =>{
     msg.channel.send(embed);
     }
 });
-/////////////////////////
-////////////////////////
-//////////////////////
+
+
+
+
+
+
+
+/// Avatar !
+
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -62,19 +126,12 @@ client.on('message', async msg =>{
         }
     };
 });
-/////////////////////////
-////////////////////////
-//////////////////////
-/////////////////////////
-////////////////////////
-//////////////////////
 
-/////////////////////////
-////////////////////////
-//////////////////////
-/////////////////////////
-////////////////////////
-//////////////////////
+
+
+
+/// Music !!
+
 client.on('message', async msg => {
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -307,31 +364,21 @@ client.on('message', message => {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
-        .addField('join', 'دخول رومك الصوتي')
-        .addField('disconnect', 'الخروج من رومك الصوتي')
-        .addField('skip', 'تخطي الأغنية')
-        .addField('pause', 'ايقاف الاغنية مؤقتا')
-        .addField('resume', 'تكملة الاغنية')
-        .addField('queue', 'اظهار قائمة التشغيل')
-        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('(1general_commands) لاظهار الاوامر العامة')
+        .addField('play | لتشغيل اغنية')
+        .addField('join | دخول رومك الصوتي')
+        .addField('disconnect | الخروج من رومك الصوتي')
+        .addField('skip | تخطي الأغنية')
+        .addField('pause | ايقاف الاغنية مؤقتا')
+        .addField('resume | تكملة الاغنية')
+        .addField('queue | اظهار قائمة التشغيل')
+        .addField('np | اظهار الاغنية اللي انت مشغلها حاليا')
+        .addField('avatar | افاتار الشخص المطلوب')
+        .addField('ping | معرفة ping البوت')
 	.setColor("#ff0000")
       message.channel.send(helpEmbed);
     }
 });
 
-client.on('message', message => {
-    if (message.content === '1general_commands') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر عامة...**')
-        .addField('avatar', "افاتار الشخص المطلوب")
-        .addField('gif', 'البحث عن جيف انت تطلبه')
-        .addField('ping', 'معرفة ping البوت')
-	.setColor("#ff0000")
-      message.channel.send(helpEmbed);
-    }
-});
 
 
 
