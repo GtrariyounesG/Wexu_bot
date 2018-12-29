@@ -68,33 +68,37 @@ client.on('ready', () => {
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
-  if (message.content.startsWith(prefix + 'play')) {
+  if (message.content.startsWith(prefix + 'setplay')) {
     client.user.setGame(argresult);
       message.channel.send(`تم تغيير البلاينق الى   ${argresult}`)
   } else 
-     if (message.content === (prefix + "leave")) {
+     if (message.content === (prefix + "quit")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(prefix + 'wt')) {
+  if (message.content.startsWith(prefix + 'setwt')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`تَم تغيير الواتشينق الى   ${argresult}`)
   } else 
-  if (message.content.startsWith(prefix + 'ls')) {
+  if (message.content.startsWith(prefix + 'setls')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`تَم تغيير الليسينينق الى   ${argresult}`)
   } else
-  if (message.content.startsWith(prefix + 'st')) {
+  if (message.content.startsWith(prefix + 'setstream')) {
     client.user.setGame(argresult, "https://www.twitch.tv/Randy");
       message.channel.send(`تم تغييرك حالتك بالتويتش الى   ${argresult}`)
   }
-  if (message.content.startsWith(prefix + 'name')) {
+  if (message.content.startsWith(prefix + 'setname')) {
   client.user.setUsername(argresult).then
       message.channel.send(`جاري تغيير الأسم لـ ..${argresult} `)
 } else
-if (message.content.startsWith(adminprefix + 'avatar')) {
+if (message.content.startsWith(adminprefix + 'setavatar')) {
   client.user.setAvatar(argresult);
     message.channel.send(`جاري تغيير الأفتار... : `);
 }
+});
+
+client.on('ready', () => {
+     client.user.setActivity("Music | 3play",{type: 'LISTENING'});
 });
 
 
