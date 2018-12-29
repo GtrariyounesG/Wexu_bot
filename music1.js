@@ -13,26 +13,50 @@ var adminprefix = '1'
 
 /// Help !
 
-        client.on('message', message => {
-          var prefix = '1';
-          if (message.content.startsWith(prefix + 'help')) {
-      let embed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('play | لتشغيل اغنية')
-        .addField('join | دخول رومك الصوتي')
-        .addField('disconnect | الخروج من رومك الصوتي')
-        .addField('skip | تخطي الأغنية')
-        .addField('pause | ايقاف الاغنية مؤقتا')
-        .addField('resume | تكملة الاغنية')
-        .addField('queue | اظهار قائمة التشغيل')
-        .addField('np | اظهار الاغنية اللي انت مشغلها حاليا')
-        .addField('avatar | افاتار الشخص المطلوب')
-        .addField('ping | معرفة ping البوت')
-	.setColor("#ff0000")
-      message.channel.send(embed)
-      }
-  });
+client.on("message", message => {
+ if (message.content === "1help") {
+  const embed = new Discord.RichEmbed() 
+      .setColor("#ffff00")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+                   💎 『 أوامر الموسيقى 』 💎
+                        
+**[ 1 ]** **البريفكس**
+
+:musical_note:1play | لتشغيل اغنية
+:musical_note:1join | دخول رومك الصوتي
+:musical_note:1disconnect | الخروج من رومك الصوتي
+:musical_note:1skip | تخطي الأغنية
+:musical_note:1pause | ايقاف الاغنية مؤقتا
+:musical_note:1resume | تكملة الاغنية
+:musical_note:1queue | اظهار قائمة التشغيل
+:musical_note:1np | اظهار الاغنية اللي انت مشغلها حاليا
+:musical_note:1avatar | افاتار الشخص المطلوب
+:musical_note:1ping | معرفة ping البوت
+                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+
+
+message.author.sendEmbed(embed)
+
+}
+});
+
+client.on('message', message => {
+     if (message.content === "1help") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField("DM ! :mailbox_with_mail: ")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
 
 /// Stats + Name + Avatar !
 
