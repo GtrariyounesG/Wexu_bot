@@ -18,7 +18,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
-      .setDescription(`
+       .setDescription(`
                                 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
                    💎 『 أوامر الموسيقى 』 💎
                         
