@@ -45,7 +45,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" Check You DM :hammer_pick: " , "Check You DM :hammer_pick: ")
+  .addField(" Check You DM :hammer_pick: " , " Coffee Music !! ")
      
      
      
