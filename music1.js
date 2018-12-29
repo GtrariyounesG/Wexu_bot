@@ -100,6 +100,9 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 }
 });
 
+client.on('ready', () => {
+     client.user.setActivity("Music | 1play",{type: 'LISTENING'});
+});
 
 /// AFK - Voice Room    
 
