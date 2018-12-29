@@ -90,6 +90,26 @@ client.on('ready',  () => {
 client.user.setStatus("dnd");
 });
 
+client.on('ready', function(){ 
+    var ms = 30000 ;
+    var setGame = [`Coffee Never Die ! `,` Back in two days ...`,`Coffee 4 ever !`];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/imd3s_x`);
+    }, ms);30000
+
+});
+
+
+
 
 
 
