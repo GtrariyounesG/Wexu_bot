@@ -21,16 +21,16 @@ client.on("message", message => {
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
                                 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-:musical_note:1play | لتشغيل اغنية
-:musical_note:1join | دخول رومك الصوتي 
-:musical_note:1disconnect | الخروج من رومك الصوتي 
-:musical_note:1skip | تخطي الأغنية 
-:musical_note:1pause |ايقاف الاغنية مؤقتا
-:musical_note:1resume | تكملة الاغنية 
-:musical_note:1queue | اظهار قائمة التشغيل
-:musical_note:1np | اظهار الاغنية اللي انت مشغلها حاليا 
-:musical_note:1avatar | افاتار الشخص المطلوب 
-:musical_note:1ping | معرفة ping البوت 
+:musical_note: 1play | لتشغيل اغنية
+:musical_note: 1join | دخول رومك الصوتي 
+:musical_note: 1disconnect | الخروج من رومك الصوتي 
+:musical_note: 1skip | تخطي الأغنية 
+:musical_note: 1pause |ايقاف الاغنية مؤقتا
+:musical_note: 1resume | تكملة الاغنية 
+:musical_note: 1queue | اظهار قائمة التشغيل
+:musical_note: 1np | اظهار الاغنية اللي انت مشغلها حاليا 
+:musical_note: 1avatar | افاتار الشخص المطلوب 
+:musical_note: 1ping | معرفة ping البوت 
                                 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 `)
 
