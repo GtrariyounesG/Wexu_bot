@@ -34,7 +34,7 @@ client.on('message', message => {
   .addField(":musical_note:1ping | معرفة ping البوت ")
   .addField("                                ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● ")
      
-     
+`)     
      
   message.channel.sendEmbed(embed);
     }
