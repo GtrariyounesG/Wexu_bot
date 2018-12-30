@@ -71,12 +71,6 @@ client.on("guildMemberAdd", async member => {
 });
 
 
-
-
-
-
-
-
 client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
   console.log('                          Bot By : ImD3s_x');
@@ -186,13 +180,6 @@ client.on('message', message => {
   });
   
   
-  
-  
-  
-  
-  
-  
-  
 client.on('message', message => {
     if (message.content.startsWith("$bans")) {
         message.guild.fetchBans()
@@ -247,7 +234,7 @@ client.on("message", message => {
 
 client.on("message", message => {
               var args = message.content.substring(prefix.length).split(" ");
-              if (message.content.startsWith(prefix + "مسح")) {
+              if (message.content.startsWith("مسح")) {
                   if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
      if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
           var msg;
@@ -285,53 +272,13 @@ client.on("message", message => {
 
 
 
-
-
-const invites = {};
-
-const wait = require('util').promisify(setTimeout);
-
-client.on('ready', () => {
-  wait(1000);
-
-  client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-});
-
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "اسم روم الولكم");
-    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.on('message' , message => {
 var prefix = "$"
 if (message.author.bot) return;
-if (message.content.startsWith(prefix + "399697177259147275")) {
+if (message.content.startsWith(prefix + "Owner")) {
 if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
-client.users.get("الايدي حقك").send(
+client.users.get("399697177259147275").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -342,30 +289,6 @@ client.users.get("الايدي حقك").send(
 
 }
     
-});
-
-
-
-
-client.on('message',async msg => {
-  var p = "!";
-  if(msg.content.startsWith(p + "user")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
-  msg.guild.createChannel(`يتم تحضير الروم :[]` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`Members : ◤ → ${msg.guild.members.size} ← ◢`);
- },1000);
-  });
-  }
 });
 
 
@@ -415,13 +338,6 @@ if (message.content.startsWith(adminprefix + 'avatar')) {
   client.user.setAvatar(argresult);
     message.channel.send(`جاري تغيير الأفتار... : `);
 }
-});
-
-
-	
-client.on('ready', () => {
-var x = client.channels.get("آيدي الروم"); ///Voice Room
-if (x) x.join();
 });
 
 
