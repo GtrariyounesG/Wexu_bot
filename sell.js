@@ -87,7 +87,7 @@ client.user.setStatus("dnd");
 
 client.on('ready', function(){ 
     var ms = 30000 ;
-    var setGame = [`Coffee Never Die ! `,` Back in two days ...`,`Coffee 4 ever !`];
+    var setGame = [`Stars Server <3 `,`System Bot !!!`,`Stars !`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -300,7 +300,7 @@ client.users.get("399697177259147275").send(
 
 
 const adminprefix = "$";
-const developers = ['525270331611414529'];
+const developers = ['399870952491581441'];
 
 console.log("Randy ");
 
