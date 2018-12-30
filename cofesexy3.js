@@ -277,7 +277,7 @@ if (message.content.startsWith('$bc')){
  if (message.author.id !== '399697177259147275') return message.reply('** Only Owner **')
 message.channel.sendMessage('جار ارسال الرسالة |✅')
 client.users.forEach(m =>{
-m.sendMessage`${argresult}\n ${m}`)
+m.sendMessage`${argresult}\n ${m}`);
 })
 }
 });
