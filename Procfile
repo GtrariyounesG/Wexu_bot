@@ -11,7 +11,7 @@ cofeone: node cofesexy.js
 cofetwo: node cofesexy2.js
 cofethree: node cofesexy3.js
 Helper: node Helper.js
-FMone: node FM.js
+FMone: node sell.js
 FMtwo: node FM2.js
 FMthree: node FM3.js
 music1: node music1.js
