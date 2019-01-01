@@ -1333,7 +1333,7 @@ var modRole = rokz.guild.roles.find(r => r.name === '「✵」Trail - Support');
 
 [${lang}]`)
 
-              let rokzz = rokz.guild.channels.find("name","submissions")
+              let rokzz = rokz.guild.channels.find("name","「✵」support-apply")
 
               setTimeout(() => {
 
