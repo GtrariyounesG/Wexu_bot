@@ -29,17 +29,15 @@ client.on('guildMemberAdd', member => {
  
 const w = ['./img/welcome_4 - Copy.png'];
  
-          let Image = Canvas.Image,
-              canvas = new Canvas(800, 300),
-              ctx = canvas.getContext('2d');
-          ctx.patternQuality = 'bilinear';
-          ctx.filter = 'bilinear';
-          ctx.antialias = 'subpixel';
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-          ctx.shadowOffsetY = 2;
-          ctx.shadowBlur = 2;
-          ctx.stroke();
-          ctx.beginPath();
+        let Image = Canvas.Image,
+            canvas = new Canvas(400, 200),
+            ctx = canvas.getContext('2d');
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 400, 200);
              
          
  
