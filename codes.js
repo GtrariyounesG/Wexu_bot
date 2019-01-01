@@ -923,7 +923,7 @@ var PinG = `${Date.now() - msg.createdTimestamp}`
 
 var ApL = `${Math.round(client.ping)}`
 
-      msg.edit(**OBx Codes© ➥** `\`\`\`javascript\nTime taken: ${PinG} ms.\nDiscord API: ${ApL} ms.\`\`\``);
+      msg.edit(`\`\`\`javascript\nTime taken: ${PinG} ms.\nDiscord API: ${ApL} ms.\`\`\``);
 
  })
 
