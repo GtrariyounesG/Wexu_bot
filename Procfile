@@ -1,3 +1,4 @@
+Fire: node fire.js
 OBxCOdes: node codes.js
 nodeone: node bot.js
 nodetwo: node bot2.js
