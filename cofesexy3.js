@@ -30,7 +30,7 @@ client.on('guildMemberAdd', member => {
 const w = ['./img/welcome_4 - Copy.png'];
  
          let Image = Canvas.Image,
-            canvas = new Canvas(800, 800),
+            canvas = new Canvas(200, 100),
             ctx = canvas.getContext('2d');
         fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
