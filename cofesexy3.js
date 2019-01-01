@@ -30,7 +30,7 @@ client.on('guildMemberAdd', member => {
 const w = ['./img/welcome_4 - Copy.png'];
  
          let Image = Canvas.Image,
-            canvas = new Canvas(200, 100),
+            canvas = new Canvas(400, 200),
             ctx = canvas.getContext('2d');
         fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
@@ -47,11 +47,11 @@ const w = ['./img/welcome_4 - Copy.png'];
                     ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
                         if (err) return console.log(err);
                        
-                        ctx.font = "bold 12px Arial";
-                        ctx.fontSize = '20px';
+                        ctx.font = "bold 15px Arial";
+                        ctx.fontSize = '25px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
+                        ctx.fillText(`Welcome to ${member.guild.name}`, 300, 130);
                        
                         ctx.font = "bold 12px Arial";
                         ctx.fontSize = '20px';
