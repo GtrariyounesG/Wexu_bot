@@ -6,9 +6,10 @@ const moment = require("moment");
 const ms = require("ms");
 
 
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
- client.user.setActivity("Coffee",{type: 'WATCHING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
