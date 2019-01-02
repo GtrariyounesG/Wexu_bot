@@ -214,7 +214,7 @@ client.user.setStatus("dnd");
 
 client.on('ready', function(){ 
     var ms = 30000 ;
-    var setGame = [`Coffee Never Die ! `,` Back in two days ...`,`Coffee 4 ever !`];
+    var setGame = [`Coffee Never Die ! `,` 4 invites = 35 k `,`Coffee 4 ever !`];
     var i = -1;
     var j = 0;
     setInterval(function (){
