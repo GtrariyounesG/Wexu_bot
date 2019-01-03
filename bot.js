@@ -37,7 +37,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Servers`,' Canon Bot™ ',' ?help | ?support',`${client.users.size} Members`,'?invite | ?inv ','By: itzZa1D !!'];
+    var setGame = [`${client.guilds.size} Servers`,' Canon Bot™ ',' ?help| ?support',`${client.users.size} Members`,'?invite | ?inv ','By: itzZa1D !!'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -718,7 +718,7 @@ message.author.send(`
 
                               ● ▬▬▬▬▬▬▬▬▬ __Information__ ▬▬▬▬▬▬▬▬▬ ●
 
-「✵」?support | عرض سيرفر السبوره في حاله مواجهة اي مشكله
+「✵」?support | عرض سيرفر السبورت في حاله مواجهة اي مشكله
 「✵」?inv / invite | لدعوه البوت**
 `);
     }
@@ -790,6 +790,35 @@ client.on('message', message => {
    message.channel.send({embed});
       }
   });
+
+
+
+var prefix = "?"
+
+client.on('message', message => {
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Check Your DM !" , "Canon Bot©")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+var prefix = "?"
+
+client.on('message', message => {
+     if (message.content === (prefix + "setstats")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , "Canon Bot©")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
   
 
 ////set
