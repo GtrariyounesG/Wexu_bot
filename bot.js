@@ -375,7 +375,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
    });  
    
    
-client.on('guildCreate', guild, => {//Toxic Codes
+client.on('guildCreate', guild, == {//Toxic Codes
     let botRole = guild.roles.find('name', 'Canon Bot');
     if(botRole) {
     botRole.setColor('BLUE')
