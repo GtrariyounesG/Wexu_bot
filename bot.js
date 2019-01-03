@@ -641,7 +641,90 @@ client.on('message',message =>{
 
 client.on('message', msg => {
   if(msg.content === '?support')
-  msg.reply(' ** :gear: Server Support :gear: ** | https://discord.gg/rWrtX6X')
+  msg.reply(' .   ** :gear: Server Support :gear: ** 
+     https://discord.gg/rWrtX6X')
+});
+
+client.on('message', async message =>{
+
+
+  let messageArray = message.content.split(" ");
+
+  let cmd = messageArray[0];
+
+  let args = messageArray.slice(1);
+
+  let prefix = '-';
+
+  let sicon = message.author.displayAvatarURL;
+
+  if(cmd === `${prefix}help`) {
+
+      var bots = new Discord.RichEmbed()
+
+
+      .setDescription(`** 
+
+
+  
+
+
+─══════ {✯ OBx Codes©✯} ══════─
+
+__الاوامرالخاصة__:spy::skin-tone-1: 
+
+\`\`-js\`\` | نشر اكواد جافا سكريبت
+
+\`\`-py\`\` | نشر اكواد بايثون
+
+\`\`-html\`\` | نشر اكواد اتشتيامل
+
+\`\`-apply\`\` |
+
+\`\`-accept\`\` |
+
+\`\`-decline\`\` |
+
+
+∞⋅∾◅▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▻∾⋅∞
+
+__اوامر صاحب البوت__:cherry_blossom: 
+
+\`\`-bc\`\`| امر البرودكاست
+\`\`-ban\`\`| لحظر شخص من السيرفر
+\`\`-unban\`\`| لفك الحظر عن شخص من السيرفر
+\`\`-mute\`\`| لأسكات عضو
+\`\`-unmute\`\`| لفك الاسكات عن العضو
+\`\`-kick\`\`| لطرد عضو
+\`\`-mc\`\`| قفل الشات
+\`\`-umc\`\`| فك القفل عن الشات
+\`\`-clear\`\`| لمسح الشات
+\`\`-role\`\`| اعطاء شخص رتبة
+\`\`-roleremove\`\`| ازالة رتبة من شخص
+
+─══════ {✯ OBx Codes© ✯} ══════─
+
+**`)
+
+      .setColor('RANDOM')
+
+      message.channel.send(bots);
+
+  }
+
+});
+
+
+
+client.on('message', message => {
+
+if (message.content === "-help") {
+
+message.react("✅")
+
+
+}
+
 });
 
 
