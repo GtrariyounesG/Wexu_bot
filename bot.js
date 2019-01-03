@@ -576,8 +576,7 @@ if(!message.channel.guild) return
 if(message.content.startsWith( '?' + 'bc')) {
         message.guild.members.forEach(member => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            member.send(` :diamond_shape_with_a_dot_inside: ${msg.guild.name}	
-			** ${args}**		
+            member.send(`** ${args}**		
  ${member} `);
 
         });
