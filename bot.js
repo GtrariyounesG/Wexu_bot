@@ -59,16 +59,16 @@ client.on('ready', function(){
 
 /// invite / inv ..
 
-client.on("message", message => {
- if (message.content === "?invite") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© Canon Bot :heart: 2018-2019 ')
-      .addField('Thanks you for using Canon Bot', `https://modest-lewin-146a75.netlify.com`)
-  message.author.send({embed});
-
- }
-}); 
+//client.on("message", message => {
+// if (message.content === "?invite") {
+//  const embed = new Discord.RichEmbed()
+//      .setColor("RANDOM")
+//      .setFooter('© Canon Bot :heart: 2018-2019 ')
+//      .addField('Thanks you for using Canon Bot', `https://modest-lewin-146a75.netlify.com`)
+//  message.author.send({embed});
+//
+// }
+//}); 
 
 
 
@@ -269,23 +269,38 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 /// ban list
 
-var prefix = "?"
-
 client.on('message', message => {
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-    if (command === "banlist") {
-        message.delete(5000)
-         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.reply("Error : \` I Dont Have ADMINISTRATOR Permission\`").then(message => message.delete(5000));
-        if(!message.member.hasPermission('ADMINISTRATOR')) return;
+        if(message.content === prefix + "hide") {
         if(!message.channel.guild) return;
-        message.guild.fetchBans()
-        .then(bans => message.channel.send(`\`${bans.size}\` ***: Server Ban List ***`)).then(message => message.delete(5000))
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms ❌');
+               message.channel.overwritePermissions(message.guild.id, {
+               READ_MESSAGES: false
+   })
+                message.channel.send('Channel Hided Successfully ! ✅  ')
+   }
+  });
 
+/// !show 
+  
+client.on('message', message => {
+        if(message.content === prefix + "show") {
+        if(!message.channel.guild) return;
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('❌');
+               message.channel.overwritePermissions(message.guild.id, {
+               READ_MESSAGES: true
+   })
+                message.channel.send('Channel Showen Successfully ! ✅  ')
+   }
+  });
+  
+  
+client.on('message', message => {
+    if (message.content.startsWith("$banlist")) {
+        message.guild.fetchBans()
+        .then(bans => message.channel.send(`:small_orange_diamond: **Server Ban List :** ${bans.size} `))
   .catch(console.error);
 }
 });
-
 /// count 
 
  client.on('message', message => {
@@ -296,7 +311,7 @@ const command = args.shift().toLowerCase();
       .setFooter(message.author.username, message.author.avatarURL)
       .setTitle(':rose:| **Members Count !**')
       .addBlankField(true)
-      .addField('Count :',`${message.guild.memberCount}`)
+      .addField(':small_orange_diamond: Count :',`${message.guild.memberCount}`)
       message.channel.send(IzRo);
     });
 
@@ -336,30 +351,32 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
 });
 
 
-//      client.on('message', message => {
-//        if (message.content === "?inv") {
-//            if(!message.channel.guild) return;
-//        let embed = new Discord.RichEmbed()
-//        .setAuthor(`Canon Bot©`, message.author.avatarURL)      
-//        .setTitle(`:small_orange_diamond: Click Here.. !`)
-//        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
-//        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
-//        .addField(':small_blue_diamond: Requested By:', "<@" + message.author.id + ">")        
-//     message.channel.sendEmbed(embed);
-//       }
-//   });
+      client.on('message', message => {
+        if (message.content === "?inv") {
+            if(!message.channel.guild) return;
+        let embed = new Discord.RichEmbed()
+        .setAuthor(`Canon Bot©`, message.author.avatarURL)      
+        .setTitle(`:small_orange_diamond: Click Here.. !`)
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
+        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
+        .addField(':small_blue_diamond: Requested By: <@" + message.author.id + ">')        
+     message.channel.sendEmbed(embed);
+       }
+   });
    
    
-client.on("message", message => {
- if (message.content === "?invite") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© Canon Bot 2018-2019 ')
-      .addField('Thanks you for using Canon Bot', `https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
-  message.author.send({embed});
-
- }
-});    
+      client.on('message', message => {
+        if (message.content === "?invite") {
+            if(!message.channel.guild) return;
+        let embed = new Discord.RichEmbed()
+        .setAuthor(`Canon Bot©`, message.author.avatarURL)      
+        .setTitle(`:small_orange_diamond: Click Here.. !`)
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
+        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
+        .addField(':small_blue_diamond: Requested By: <@" + message.author.id + ">')        
+     message.channel.sendEmbed(embed);
+       }
+   });  
    
    
  /// ping  
@@ -754,4 +771,3 @@ client.on('message', message => {
 ////set
 
 client.login(process.env.BOT_TOKEN);
-
