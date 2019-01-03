@@ -622,7 +622,7 @@ client.on('message',message =>{
     }else{
         invs[inv.code] =+ inv.uses;
     }
-        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+        invites.push(`${inv.inviter} \`${invs[inv.code]}\`;`);
    
   });
   var embed = new Discord.RichEmbed()
@@ -638,21 +638,11 @@ client.on('message',message =>{
   
   
   
-  
-  
-client.on('message', message => {
-     if (message.content === "?support") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , " https://discord.gg/rWrtX6X")
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});  
 
-
+client.on('message', msg => {
+  if(msg.content === '?support')
+  msg.reply(' ** :gear: Server Support :gear: ** | https://discord.gg/rWrtX6X')
+});
 
 
 
