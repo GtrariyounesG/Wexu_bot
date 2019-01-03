@@ -68,7 +68,7 @@ client.on('message',async message => {
   seconds = seconds > 9 ? seconds : '0' + seconds
   return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
   };
-  if(message.content.startsWith( p + "bot-info")) {
+  if(message.content.startsWith(prefix + "bot-info")) {
     const millis = new Date().getTime() - client.user.createdAt.getTime();
     const noww = new Date();
     dateFormat(noww, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
@@ -606,42 +606,12 @@ Server ID: ${guild.id}
 Count: ${guild.memberCount}**`);
 client.channels.get("530319273826975744").sendEmbed(embed)
 });
-
-
-client.on('message',message =>{
-    var prefix = "?";
-    if(message.content.startsWith(prefix + 'topinv')) {
-  message.guild.fetchInvites().then(i =>{
-  var invites = [];
-   
-  i.forEach(inv =>{
-    var [invs,i]=[{},null];
-     
-    if(inv.maxUses){
-        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
-    }else{
-        invs[inv.code] =+ inv.uses;
-    }
-        invites.push(`${inv.inviter} \`${invs[inv.code]}\`;`);
-   
-  });
-  var embed = new Discord.RichEmbed()
-  .setColor("#000000")
-  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
-  .setThumbnail("https://cdn.discordapp.com/attachments/442414506430169098/489929808244113409/JPEG_20180913_232108.jpg")
-           message.channel.send({ embed: embed });
-   
-  });
-   
-    }
-  });
-  
   
   
 
 client.on('message', msg => {
   if(msg.content === '?support')
-  msg.reply(' .   ** :gear: Server Support :gear:')
+  msg.channel.send(':gear: Server Support :gear:')
 });
 
 client.on('message', msg => {
@@ -651,7 +621,7 @@ client.on('message', msg => {
 
 
    client.on('message', message => {
-     if (message.content === "-help") {
+     if (message.content === "?help") {
 message.author.send(`  **
 __ ● ▬▬▬▬▬▬▬▬▬#General#▬▬▬▬▬▬▬▬▬ ● __
 📋-=#say#=--=#يكرر الكلام#=-
@@ -668,7 +638,7 @@ __ ● ▬▬▬▬▬▬▬▬▬#General#▬▬▬▬▬▬▬▬▬ ● __
 
 
 
-var prefix = "-";
+var prefix = "?";
 //Toxic Codes
 client.on("message", message => {//Toxic Codes
     if(message.content.startsWith(prefix + "nickall")) {//Toxic Codes
@@ -703,7 +673,7 @@ client.on('message', message => {
             .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
             .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
             .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
-            .addField('**Bot Owner**👑 :' , `[<@ايدي حقك>]` , true)
+            .addField('**Bot Owner**👑 :' , `[<@399697177259147275>]` , true)
             .setFooter(message.author.username, message.author.avatarURL)
     })
 }
