@@ -537,7 +537,16 @@ if(message.content.startsWith( '?' + 'bc')) {
 
 });
 
-
+ client.on('message', message => {
+     if (message.content === "?bc") {
+      const embed = new Discord.RichEmbed()
+ 
+  .setColor("#FF0000")
+  .addField('**Message was sent for ```${message.guild.memberCount}``` members.**')
+ 
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
