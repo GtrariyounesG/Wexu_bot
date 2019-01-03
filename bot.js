@@ -357,9 +357,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
         let embed = new Discord.RichEmbed()
         .setAuthor(`Canon Bot©`, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: Click Here.. !`)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
-        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
-        .addField(':small_blue_diamond: Requested By: <@" + message.author.id + ">')        
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)      
      message.channel.sendEmbed(embed);
        }
    });
@@ -371,9 +369,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
         let embed = new Discord.RichEmbed()
         .setAuthor(`Canon Bot©`, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: Click Here.. !`)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
-        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
-        .addField(':small_blue_diamond: Requested By: <@" + message.author.id + ">')        
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)      
      message.channel.sendEmbed(embed);
        }
    });  
