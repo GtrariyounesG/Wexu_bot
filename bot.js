@@ -37,7 +37,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Canon Bot™ ',' ?help | ?support',`${client.users.size} Members`,'?invite | ?inv ','By: itzZa1D !!'];
+    var setGame = [`${client.guilds.size} Servers`,' Canon Bot™ ',' ?help | ?support',`${client.users.size} Members`,'?invite | ?inv ','By: itzZa1D !!'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -648,12 +648,12 @@ client.on('guildCreate', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=21469585838')
   .setDescription(`**
-  New Server Add Canon Bot ✅
+  New Server Add __Canon Bot__ ✅
   
-Server Name: ``${guild.name}``
-Server Owner: ${guild.owner}
-Server ID: ``${guild.id}``
-Count: ``${guild.memberCount}``**`);
+__Server Name__: ${guild.name}
+__Server Owner__: ${guild.owner}
+__Server ID__: ${guild.id}
+__Count__: ${guild.memberCount}**`);
 client.channels.get("530319273826975744").sendEmbed(embed)
 });
 
@@ -665,10 +665,10 @@ client.on('guildDelete', guild => {
   .setDescription(`**
   Server Kicked __Canon Bot__ :cry:
 
-- Server Name: ``${guild.name}``
-- Server Owner: ${guild.owner}
-- Server ID: ``${guild.id}``
--Count: ``${guild.memberCount}``**`);
+__Server Name__: ${guild.name}
+__Server Owner__: ${guild.owner}
+__Server ID__: ${guild.id}
+__Count__: ${guild.memberCount}**`);
 client.channels.get("530319273826975744").sendEmbed(embed)
 });
   
@@ -795,4 +795,3 @@ client.on('message', message => {
 ////set
 
 client.login(process.env.BOT_TOKEN);
-
