@@ -565,6 +565,35 @@ message.channel.send(embed500)
 
 
 
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "Canon » Member");
+   member.addRole (role);
+  
+})
+
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "Member");
+   member.addRole (role);
+  
+})
+
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "Member");
+   member.addRole (role);
+  
+})
+
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "» Čǿ");
+   member.addRole (role);
+  
+})
+
+
 /// bc --------------------------------------------------------------------------------------------------------------
 
 
@@ -766,3 +795,4 @@ client.on('message', message => {
 ////set
 
 client.login(process.env.BOT_TOKEN);
+
