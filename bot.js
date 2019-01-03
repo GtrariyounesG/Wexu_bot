@@ -668,47 +668,48 @@ __ ● ▬▬▬▬▬▬▬▬▬#General#▬▬▬▬▬▬▬▬▬ ● __
 
 
 
-client.on('message',message => {
-         if (!message.content.startsWith(prefix)) return;
-var cont = message.content.slice(prefix.length).split(" ");
+var prefix = "-";
+//Toxic Codes
+client.on("message", message => {//Toxic Codes
+    if(message.content.startsWith(prefix + "nickall")) {//Toxic Codes
+        let args = message.content.split(" ").slice(1).join(" ");
+        if(!message.member.hasPermission("MANAGE_NICKNAMES")) return;
+            if(!args) {//Toxic Codes
+                return;
+            }//Toxic Codes
+        message.channel.send(`**Changes applied on __${message.guild.memberCount}__ members.**`);//Toxic Codes
+                message.guild.members.forEach(codes => {//Toxic Codes
+                    codes.setNickname(args + `  ${codes.user.username}`);//Toxic Codes
+                }) //Toxic Codes
+    }//Toxic Codes
+});//Toxic Codes
 
-  var args = cont.slice(1);
-       if (message.content.startsWith("-nick")) {
-   let nickmention = message.mentions.users.first()
-    if (message.mentions.users.size === 0) {
-        if (message.member.permissions.has("CHANGE_NICKNAME")) {
-            let nickchange = args.slice(0).join(" ");
-            if (args[0] === undefined) {
-                message.channel.send("**ضع الاسم الذي تريده**")
-                return;
-            }
-            message.guild.members.get(message.author.id).setNickname(nickchange).catch(err => {
-                message.channel.send("Error: " + err)
-                return;
-            });
-            message.channel.send("✅ **Changed your nickname to:** `" + nickchange + "`")
-            return;
-        } else {
-            message.channel.send("You don't have permission to change your username. 😕")
-            return;
-        }
-        return; 
-    }
-    if (message.member.permissions.has("MANAGE_NICKNAMES", "ADMINISTRATOR")) {
-        let nickchange = args.slice(1).join(" ");
-        if (args[0] === undefined) {
-            message.channel.send("**ضع اسم**")
-            return;
-        }
-        message.guild.members.get(nickmention.id).setNickname(nickchange).catch(err => {
-            message.channel.send("Error: " + err);
-            return;
-        });
-        message.channel.send("Nick of " + nickmention + " (" + nickmention.username + "#" + nickmention.discriminator + ") changed to: `" + nickchange + "`")
-  
-     }
-    } 
+
+
+
+
+
+
+
+client.on('message', message => {
+    if (message.content === ('?bot')) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('**Servers**📚 :', [client.guilds.size], true)
+            .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
+            .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
+            .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
+            .addField('**Bot Owner**👑 :' , `[<@ايدي حقك>]` , true)
+            .setFooter(message.author.username, message.author.avatarURL)
+    })
+}
 });
+
+
 
 
 
