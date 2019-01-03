@@ -6,7 +6,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
- client.user.setActivity("Beta v0.3",{type: 'watching'})
+ client.user.setActivity("BETAAA",{type: 'watching'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -521,26 +521,19 @@ message.channel.send(embed500)
 ///--------------------------------------------------------------------------------------------------------------
 
 
-Client.on("message", message => {
-    var prefix = "-";
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
- if (!args[1]) {
-                                let embed3 = new Discord.RichEmbed()
-                                .setDescription(":white_check_mark: | تم ارسال للكل رساله فارغه")
-                                .setColor("#FF0000")
-                                message.channel.sendEmbed(embed3);
-                            } else {
- 
-                            let embed4 = new Discord.RichEmbed()
-                                                            .setDescription(':white_check_mark: | تم ارسال للكل الرساله !')
-                                                            .setColor("#008000")
-                                message.channel.sendEmbed(embed4);
-                                                      message.delete();
-                            }
-                          }
+client.on('message', message => {
+    if (message.author.id === client.user.id) return;
+if(!message.channel.guild) return
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.startsWith( '?' + 'bc')) {
+        message.guild.members.forEach(member => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+            member.send(`${member} ** ${args}** `);
+
+        });
+    }
+
 });
 
 
