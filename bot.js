@@ -357,7 +357,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
         let embed = new Discord.RichEmbed()
         .setAuthor(`Canon Bot©`, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: Click Here.. !`)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)      
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=502196267175116811&scope=bot&permissions=2146958591`)      
      message.channel.sendEmbed(embed);
        }
    });
@@ -369,10 +369,20 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
         let embed = new Discord.RichEmbed()
         .setAuthor(`Canon Bot©`, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: Click Here.. !`)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)      
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=502196267175116811&scope=bot&permissions=2146958591`)      
      message.channel.sendEmbed(embed);
        }
    });  
+   
+   
+client.on('guildCreate', guild, => {//Toxic Codes
+    let botRole = guild.roles.find('name', 'Canon Bot');
+    if(botRole) {
+    botRole.setColor('BLUE')
+} else {//Toxic Codes
+return;
+}
+});   
    
    
  /// ping  
