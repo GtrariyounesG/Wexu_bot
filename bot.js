@@ -641,7 +641,7 @@ client.on('message',message =>{
 
 client.on('message', msg => {
   if(msg.content === '?support')
-  msg.reply(' .   ** :gear: Server Support :gear: ** https://discord.gg/rWrtX6X')
+  msg.reply(' .   ** :gear: Server Support :gear:')
 });
 
 client.on('message', msg => {
@@ -665,13 +665,8 @@ client.on('message', async message =>{
 
   if(cmd === `${prefix}help`) {
 
-      var bots = new Discord.RichEmbed()
-
 
       .setDescription(`** 
-
-
-  
 
 
 ─══════ {✯ OBx Codes©✯} ══════─
