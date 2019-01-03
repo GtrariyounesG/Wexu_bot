@@ -60,20 +60,9 @@ client.on('ready', function(){
         i = i+j;
         client.user.setGame(setGame[i],`http://www.twitch.tv/imd3s_x`);
     }, ms);
-	
-	
- client.on('message', message => {
-     if (message.content === "bot") {
-     let embed = new Discord.RichEmbed()
-
-  .setColor("#51cde6")
-  .addField("Playing on" , client.guilds.size)
-
-
-  message.channel.sendEmbed(embed);
-
-    }
 });	
+	
+	
 	
 
 client.on('message',async message => {
