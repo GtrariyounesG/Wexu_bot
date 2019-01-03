@@ -529,23 +529,13 @@ if(!message.channel.guild) return
 if(message.content.startsWith( '?' + 'bc')) {
         message.guild.members.forEach(member => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            member.send(` ** ${args}**
+            member.send(` :diamond_shape_with_a_dot_inside: ${guild.name}
+			** ${args}**
  ${member} `);
 
         });
     }
 
-});
-
- client.on('message', message => {
-     if (message.content === "?bc") {
-      const embed = new Discord.RichEmbed()
- 
-  .setColor("#FF0000")
-  .addField('**Message was sent for ```${message.guild.memberCount}``` members.**')
- 
-  message.channel.sendEmbed(embed);
-    }
 });
 
 
