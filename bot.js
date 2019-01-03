@@ -4,11 +4,9 @@ const vpoints = {};
 const jimp = require("jimp");
 const client = new Discord.Client();
 
-
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
- client.user.setActivity("Beta v0.1",{type: 'watching'})
+ client.user.setActivity("Beta v0.2",{type: 'watching'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -156,7 +154,7 @@ const prefix = "?";
   .addField("User:",  `[ + ${user.tag} + ]`)
   .addField("By:", `[  + ${message.author.tag} +  ]`)
   .addField("Reason:", `[ + ${reason} +  ]`)
-  //client.channels.get("492086928397565952").send({embed : banembed})
+  client.channels.get("492086928397565952").send({embed : banembed})
 }
 });
 
@@ -349,9 +347,9 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
         if (message.content === "?inv") {
             if(!message.channel.guild) return;
         let embed = new Discord.RichEmbed()
-        .setAuthor(`-#| ${message.author.username} |#-`, message.author.avatarURL)      
-        .setTitle(`:small_orange_diamond:Click Here.. !`)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=395462979115679755&scope=bot&permissions=2146958591`)
+        .setAuthor(`Canon Bot©`, message.author.avatarURL)      
+        .setTitle(`:small_orange_diamond: Click Here.. !`)
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
         .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
         .addField(':small_blue_diamond: Requested By:', "<@" + message.author.id + ">")        
      message.channel.sendEmbed(embed);
@@ -423,10 +421,10 @@ client.on('message',async msg => {
   if(msg.content.startsWith(p + "setstats")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('? **لا معك رتبه**');
   if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('? **البوت لا يمتلك صلاحية**');
-  var ggg= msg.guild.createChannel('n3k4a is one', 'category').then(kk => {
-           var ccc =msg.guild.createChannel('n3k4a is one', 'voice').then(al => {
-                var aa =msg.guild.createChannel('n3k4a is one', 'voice').then(alp => {
-                   var aaa =msg.guild.createChannel('n3k4a is one ', 'voice').then(alph => {
+  var ggg= msg.guild.createChannel('Server Stats', 'category').then(kk => {
+           var ccc =msg.guild.createChannel('Voice O', 'voice').then(al => {
+                var aa =msg.guild.createChannel('TIME ', 'voice').then(alp => {
+                   var aaa =msg.guild.createChannel('DATE ', 'voice').then(alph => {
        al.setParent(kk);
        alp.setParent(kk);
        alph.setParent(kk);
@@ -465,7 +463,7 @@ hours = 12;
 }
      al.setName(`Voice Online :[ ${msg.guild.members.filter(m => m.voiceChannel).size} ]`);
       alp.setName(`Time :[${hours} : ${minutes} : ${Seconds} ${suffix}]`);
-        alph.setName(`[ Date : [${Year} - ${Month} - ${Dat} ]`);
+        alph.setName(` Date : [${Dat} - ${Month} - ${Year}]`);
  },1000);
                    })
     
@@ -516,6 +514,40 @@ message.channel.send(embed500)
 
 }
 })
+
+
+
+
+///--------------------------------------------------------------------------------------------------------------
+
+
+Client.on("message", message => {
+    var prefix = "-";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+ if (!args[1]) {
+                                let embed3 = new Discord.RichEmbed()
+                                .setDescription(":white_check_mark: | تم ارسال للكل رساله فارغه")
+                                .setColor("#FF0000")
+                                message.channel.sendEmbed(embed3);
+                            } else {
+ 
+                            let embed4 = new Discord.RichEmbed()
+                                                            .setDescription(':white_check_mark: | تم ارسال للكل الرساله !')
+                                                            .setColor("#008000")
+                                message.channel.sendEmbed(embed4);
+                                                      message.delete();
+                            }
+                          }
+});
+
+
+
+
+
+
 
 
 ////set
