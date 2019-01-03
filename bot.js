@@ -605,13 +605,14 @@ if(!message.channel.guild) return
 if(message.content.startsWith( '?' + 'bc')) {
         message.guild.members.forEach(member => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            member.send(`** ${args}**		
- ${member} `);
+            member.send(`${args}\n ${member}`);
 
         });
     }
+	
 
 });
+
 
 
 /// clear 
