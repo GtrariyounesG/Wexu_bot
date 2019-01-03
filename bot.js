@@ -641,9 +641,14 @@ client.on('message',message =>{
 
 client.on('message', msg => {
   if(msg.content === '?support')
-  msg.reply(' .   ** :gear: Server Support :gear: ** 
-     https://discord.gg/rWrtX6X')
+  msg.reply(' .   ** :gear: Server Support :gear: ** https://discord.gg/rWrtX6X')
 });
+
+client.on('message', msg => {
+  if(msg.content === '?support')
+  msg.channel.send('https://discord.gg/rWrtX6X')
+});
+
 
 client.on('message', async message =>{
 
