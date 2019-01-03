@@ -40,7 +40,41 @@ client.on("guildDelete", guild => {
 console.log(` Canon Bot  Leave From Server ${guild.name}, The Server Owner Is ${guild.owner.user.username}`)
 client.channels.get("399697177259147275").send('** :purple_heart: Canon Bot  **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
   });
+  
+  
+  
 
+
+client.on('ready', function(){
+    var ms = 60000 ;
+    var setGame = [`${client.guilds.size} Server`,' Canon Bot™ ',' ?help | ?support',`${client.users.size} Members`,'?invite | ?inv ','By: itzZa1D !!'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/imd3s_x`);
+    }, ms);
+	
+	
+ client.on('message', message => {
+     if (message.content === "bot") {
+     let embed = new Discord.RichEmbed()
+
+  .setColor("#51cde6")
+  .addField("Playing on" , client.guilds.size)
+
+
+  message.channel.sendEmbed(embed);
+
+    }
+});	
+	
 
 client.on('message',async message => {
     var p = "?"
@@ -529,8 +563,8 @@ if(!message.channel.guild) return
 if(message.content.startsWith( '?' + 'bc')) {
         message.guild.members.forEach(member => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            member.send(`** ${args}**	
-	
+            member.send(` :diamond_shape_with_a_dot_inside: ${msg.guild.name}	
+			** ${args}**		
  ${member} `);
 
         });
