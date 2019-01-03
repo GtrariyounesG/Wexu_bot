@@ -30,15 +30,6 @@ client.on('ready', () => {
 });
 
 
-client.on("guildCreate", guild => {
-console.log(` Canon Bot  Added To Server ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
-client.channels.get("399697177259147275").send('** :purple_heart: Canon Bot ** ``Added``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
-});
-
-client.on("guildDelete", guild => {
-console.log(` Canon Bot  Leave From Server ${guild.name}, The Server Owner Is ${guild.owner.user.username}`)
-client.channels.get("399697177259147275").send('** :purple_heart: Canon Bot  **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
-  });
   
   
   
@@ -588,9 +579,84 @@ client.on("message", message => {
 
 
 
+client.on('guildCreate', guild => {
+         const embed = new Discord.RichEmbed()
+     .setColor("GREEN")
+     .setTitle('Click Here To Add Bot .!')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=21469585838')
+  .setDescription(`**
+  New Server Add Canon Bot ✅
+Server Name: ${guild.name}
+Server Owner: ${guild.owner}
+Server ID: ${guild.id}
+Count: ${guild.memberCount}**`);
+client.channels.get("530319273826975744").sendEmbed(embed)
+});
+
+client.on('guildDelete', guild => {
+         const embed = new Discord.RichEmbed()
+     .setColor("RED")
+     .setTitle('Click Here To Add Bot .!')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=21469585838')
+  .setDescription(`**
+  Server Kicked Canon Bot :cry:
+Server Name: ${guild.name}
+Server Owner: ${guild.owner}
+Server ID: ${guild.id}
+Count: ${guild.memberCount}**`);
+client.channels.get("530319273826975744").sendEmbed(embed)
+});
+
+
+client.on('message',message =>{
+    var prefix = "?";
+    if(message.content.startsWith(prefix + 'topinv')) {
+  message.guild.fetchInvites().then(i =>{
+  var invites = [];
+   
+  i.forEach(inv =>{
+    var [invs,i]=[{},null];
+     
+    if(inv.maxUses){
+        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
+    }else{
+        invs[inv.code] =+ inv.uses;
+    }
+        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+   
+  });
+  var embed = new Discord.RichEmbed()
+  .setColor("#000000")
+  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
+  .setThumbnail("https://cdn.discordapp.com/attachments/442414506430169098/489929808244113409/JPEG_20180913_232108.jpg")
+           message.channel.send({ embed: embed });
+   
+  });
+   
+    }
+  });
+  
+  
+  
+  
+  
+client.on('message', message => {
+     if (message.content === "?support") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" ** :gear: Server Support :gear: **" , " https://discord.gg/rWrtX6X")
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});  
+
+
 
 
 
 ////set
 
 client.login(process.env.BOT_TOKEN);
+
