@@ -55,40 +55,9 @@ client.on('ready', function(){
 	
 	
 
-client.on('message',async message => {
-    var p = "?"
-  function timeCon(time) {
-  let days = Math.floor(time % 31536000 / 86400)
-  let hours = Math.floor(time % 31536000 % 86400 / 3600)
-  let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
-  let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
-  days = days > 9 ? days : '0' + days
-  hours = hours > 9 ? hours : '0' + hours
-  minutes = minutes > 9 ? minutes : '0' + minutes
-  seconds = seconds > 9 ? seconds : '0' + seconds
-  return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
-  };
-  if(message.content.startsWith(prefix + "bot-info")) {
-    const millis = new Date().getTime() - client.user.createdAt.getTime();
-    const noww = new Date();
-    dateFormat(noww, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-    const createdAT = millis / 1000 / 60 / 60 / 24;
-    var star = new Discord.RichEmbed() 
-    .setTitle(`Information of ${client.user.username} `)
-    .setColor('#36393e')
-    .addField('💓 Prefix', prefix, true)
-    .addField('🖥️ Memory Usage', `${(process.memoryUsage().rss / 1048576).toFixed()} MB.`,true)
-    .addField('🏍️ Ping', `${Math.round(client.ping)} ms.`,true)
-    .addField('⏲️ Uptime', `${timeCon(process.uptime())}`, true)
-    .addField('💚 Servers', client.guilds.size,true)
-    .addField('💙 Users', client.users.size,true)
-    message.channel.send(star);
-  }
-});
 
 
-
-
+/// invite / inv ..
 
 client.on("message", message => {
  if (message.content === "?invite") {
@@ -103,7 +72,7 @@ client.on("message", message => {
 
 
 
-
+/// Ban 
 
 client.on('message', message => {
 const prefix = "?";
@@ -134,6 +103,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 }
 });
 
+/// Kick
 
 client.on('message', message => {
 const prefix = "?";
@@ -171,6 +141,7 @@ const prefix = "?";
 }
 });
 
+/// mute 
 
 client.on('message', async message => {
   let args = message.content.split(" ");
@@ -263,6 +234,8 @@ client.on('message', async message => {
   }
 });
 
+/// un mute 
+
 
 client.on('message', async message => {
     let mention = message.mentions.members.first();
@@ -293,6 +266,9 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
+
+/// ban list
+
 var prefix = "?"
 
 client.on('message', message => {
@@ -310,7 +286,7 @@ const command = args.shift().toLowerCase();
 }
 });
 
-
+/// count 
 
  client.on('message', message => {
               if (!message.channel.guild) return;
@@ -324,6 +300,9 @@ const command = args.shift().toLowerCase();
       message.channel.send(IzRo);
     });
 
+	
+	
+/// mc 	
 	
 client.on('message', message => {
 
@@ -339,6 +318,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__
            });
              }
 
+			 /// umc
  if(message.content === prefix + "?umc") {
                      if(!message.channel.guild) return message.reply('** This command only for servers**');
 
@@ -356,20 +336,33 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
 });
 
 
-      client.on('message', message => {
-        if (message.content === "?inv") {
-            if(!message.channel.guild) return;
-        let embed = new Discord.RichEmbed()
-        .setAuthor(`Canon Bot©`, message.author.avatarURL)      
-        .setTitle(`:small_orange_diamond: Click Here.. !`)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
-        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
-        .addField(':small_blue_diamond: Requested By:', "<@" + message.author.id + ">")        
-     message.channel.sendEmbed(embed);
-       }
-   });
+//      client.on('message', message => {
+//        if (message.content === "?inv") {
+//            if(!message.channel.guild) return;
+//        let embed = new Discord.RichEmbed()
+//        .setAuthor(`Canon Bot©`, message.author.avatarURL)      
+//        .setTitle(`:small_orange_diamond: Click Here.. !`)
+//        .setURL(`https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
+//        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")
+//        .addField(':small_blue_diamond: Requested By:', "<@" + message.author.id + ">")        
+//     message.channel.sendEmbed(embed);
+//       }
+//   });
    
    
+client.on("message", message => {
+ if (message.content === "?invite") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setFooter('© Canon Bot 2018-2019 ')
+      .addField('Thanks you for using Canon Bot', `https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=2146958591`)
+  message.author.send({embed});
+
+ }
+});    
+   
+   
+ /// ping  
    
  client.on('message', message => {
      if (message.content === "?ping") {
@@ -382,6 +375,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__Y
     }
 });
 
+/// avatar
 
 client.on('message', message => {
     if (message.content.startsWith("?avatar")) {
@@ -398,6 +392,31 @@ client.on('message', message => {
         .setImage(`${x5bzm.avatarURL}`)
       message.channel.sendEmbed(embed);
     }
+});
+
+/// Server 
+
+client.on('message', message => {
+var prefix = "?" // البريفكس
+if(message.content.startsWith(prefix +"server")){ // الامر
+  if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** :negative_squared_cross_mark: `)
+if(!message.channel.guild) return message.reply(' ');
+const millis = new Date().getTime() - message.guild.createdAt.getTime();
+const now = new Date();
+const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
+const days = millis / 1000 / 60 / 60 / 24;
+var embed  = new Discord.RichEmbed()
+.setAuthor(message.guild.name, message.guild.iconURL)
+.addField("**🆔 Server ID:**", message.guild.id,true)
+.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
+.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+.addField("**👥 Members**",`[${message.guild.memberCount}]`,true)
+.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
+.addField("**🌍 Region **" , message.guild.region,true)
+.setColor('#000000')
+message.channel.sendEmbed(embed)
+ 
+}
 });
 
 
@@ -425,7 +444,7 @@ m.sendMessage(args)
 })
 
 
-
+/// setstats
 
 client.on('message',async msg => {
      if(msg.channel.type === "old") return;
@@ -489,6 +508,8 @@ hours = 12;
 });
 
 
+
+
 client.on('message', async message => {
     if(message.content.includes('discord.gg')){ 
         if(message.member.hasPermission("MANAGE_GUILD")) return;
@@ -531,7 +552,7 @@ message.channel.send(embed500)
 
 
 
-///--------------------------------------------------------------------------------------------------------------
+/// bc --------------------------------------------------------------------------------------------------------------
 
 
 client.on('message', message => {
@@ -552,6 +573,7 @@ if(message.content.startsWith( '?' + 'bc')) {
 });
 
 
+/// clear 
 
 client.on("message", message => {
     var prefix = "?";
@@ -586,10 +608,11 @@ client.on('guildCreate', guild => {
      .setURL('https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=21469585838')
   .setDescription(`**
   New Server Add Canon Bot ✅
-Server Name: ${guild.name}
+  
+Server Name: ``${guild.name}``
 Server Owner: ${guild.owner}
-Server ID: ${guild.id}
-Count: ${guild.memberCount}**`);
+Server ID: ``${guild.id}``
+Count: ``${guild.memberCount}``**`);
 client.channels.get("530319273826975744").sendEmbed(embed)
 });
 
@@ -599,16 +622,19 @@ client.on('guildDelete', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/oauth2/authorize?client_id=493764393016754178&scope=bot&permissions=21469585838')
   .setDescription(`**
-  Server Kicked Canon Bot :cry:
-Server Name: ${guild.name}
-Server Owner: ${guild.owner}
-Server ID: ${guild.id}
-Count: ${guild.memberCount}**`);
+  Server Kicked __Canon Bot__ :cry:
+
+- Server Name: ``${guild.name}``
+- Server Owner: ${guild.owner}
+- Server ID: ``${guild.id}``
+-Count: ``${guild.memberCount}``**`);
 client.channels.get("530319273826975744").sendEmbed(embed)
 });
   
   
 
+/// support   
+  
 client.on('message', msg => {
   if(msg.content === '?support')
   msg.channel.send(':gear: Server Support :gear:')
@@ -622,21 +648,43 @@ client.on('message', msg => {
 
    client.on('message', message => {
      if (message.content === "?help") {
-message.author.send(`  **
-__ ● ▬▬▬▬▬▬▬▬▬#General#▬▬▬▬▬▬▬▬▬ ● __
-📋-=#say#=--=#يكرر الكلام#=-
-📋-=#roll#=--=#قرعه#=-
-📋-=#inv#=--=#رابط البوت#=-
-📋-=#server#=--=#معلومات السيرفر#=-
-📋-=#embed#=--=#يكرر الكلام بامبد#=-
-📋-=#avatar#=--=#صوره عرضك او صوره عرض اي شخص#=-
-📋-=#id#=--=#معلوماتك#=-
-**`);
+message.author.send(`
+**.                             ● ▬▬▬▬▬▬▬▬▬ __General__ ▬▬▬▬▬▬▬▬▬ ●
+
+「✵」?count | عرض عدد أعضاء السيرفر
+「✵」?ping | عرض سرعه البوت
+「✵」?avatar | عرض صورتك أو صوره أي احد تمنشنه
+「✵」?image | لعرض صوره السيرفر
+「✵」?server | معلومات عن السيرفر
+「✵」?help | عرض هذه القائمه
+「✵」?bot | معلومات عن البوت
+
+                              ● ▬▬▬▬▬▬▬▬▬ __Staff__ ▬▬▬▬▬▬▬▬▬ ●
+
+「✵」?ban | حظر شخص من السيرفر
+「✵」?kick | طرد أحد من أعضاء السيرفر
+「✵」?mute | إسكات شخص من أعضاء السيرفر
+「✵」?unmute | رفع الإسكات عن العضو
+「✵」?banlist | عرض عدد الناس المحظوره من السيرفر
+「✵」?mc | تقفيل الشات
+「✵」?umc | فتح الشات
+「✵」?hide | إخفاء الروم
+「✵」?show | إظهار الروم
+「✵」?setstats | (إنشاء 3 رومات بمعلومات عن (التاريخ , الوقت , عدد الناس الموجوده في الروم الصوتي
+「✵」?bc | رساله جماعيه لكل الناس في السيرفر
+「✵」?clear | مسح الشات
+「✵」?nickall | إعطاء جميع الناس في السيرفر إسم مستعار
+
+                              ● ▬▬▬▬▬▬▬▬▬ __Information__ ▬▬▬▬▬▬▬▬▬ ●
+
+「✵」?support | عرض سيرفر السبوره في حاله مواجهة اي مشكله
+「✵」?inv / invite | لدعوه البوت**
+`);
     }
 });
 
 
-
+/// nick all
 
 var prefix = "?";
 //Toxic Codes
@@ -658,7 +706,7 @@ client.on("message", message => {//Toxic Codes
 
 
 
-
+/// bot 
 
 
 client.on('message', message => {
@@ -681,9 +729,27 @@ client.on('message', message => {
 
 
 
+/// image 
 
+   client.on("message", message => {
+    const prefix = "?"
+              
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === prefix + "image"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor(0x164fe3)
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
 
-
+   message.channel.send({embed});
+      }
+  });
+  
 
 ////set
 
