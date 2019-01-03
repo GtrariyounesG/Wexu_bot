@@ -529,7 +529,7 @@ if(!message.channel.guild) return
 if(message.content.startsWith( '?' + 'bc')) {
         message.guild.members.forEach(member => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            member.send(`${member} ** ${args}** `);
+            member.send(` ** ${args}** ${member} `);
 
         });
     }
