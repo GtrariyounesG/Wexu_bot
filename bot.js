@@ -644,7 +644,7 @@ client.on('message', message => {
 /// Server 
 
 client.on('message', message => {
-var prefix = "?" // البريفكس
+ // البريفكس
 if(message.content.startsWith(prefix +"server")){ // الامر
   if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** :negative_squared_cross_mark: `)
 if(!message.channel.guild) return message.reply(' ');
@@ -1008,7 +1008,6 @@ client.on('message', message => {
 /// image 
 
    client.on("message", message => {
-    const prefix = "?"
               
           if(!message.channel.guild) return;
    if(message.author.bot) return;
@@ -1028,7 +1027,7 @@ client.on('message', message => {
 
 
 
-var prefix = "?"
+
 
 client.on('message', message => {
      if (message.content === (prefix + "help")) {
@@ -1041,7 +1040,7 @@ client.on('message', message => {
 });
 
 
-var prefix = "?"
+
 
 client.on('message', message => {
      if (message.content === (prefix + "setstats")) {
