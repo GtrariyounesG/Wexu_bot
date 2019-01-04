@@ -852,7 +852,7 @@ if(message.content.startsWith( '?' + 'bc')) {
 /// clear 
 
 client.on("message", message => {
-    var prefix = "?";
+    
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
@@ -962,7 +962,7 @@ message.author.send(`
 
 /// nick all
 
-var prefix = "?";
+
 //Toxic Codes
 client.on("message", message => {//Toxic Codes
     if(message.content.startsWith(prefix + "nickall")) {//Toxic Codes
